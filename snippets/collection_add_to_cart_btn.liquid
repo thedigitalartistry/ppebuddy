@@ -1,0 +1,27 @@
+<div udy-el="loop-add-to-cart">
+
+    <form data-node-type="commerce-add-to-cart-form" class="w-commerce-commerceaddtocartform default-state-5" action="/cart/add">
+        <div class="quantity-container-categories">
+            <a href="#" class="q-minus categories w-button" style="{% if product.available == false %} pointer-events: none; opacity: 0.5; {% endif %}">
+                {{ 'collection.A_150' | t }}
+            </a>
+            <input type="number" pattern="^[0-9]+$" inputmode="numeric" id="quantity-461692f1711f2fdfc39693f0fd995d7f" name="quantity" min="1" class="w-commerce-commerceaddtocartquantityinput quantity-field-categories" value="1">
+            <a href="#" class="q-plus categories w-button" style="{% if product.available == false %} pointer-events: none; opacity: 0.5; {% endif %}">
+                {{ 'collection.A_151' | t }}
+            </a>
+        </div>
+
+        <input type="submit" value="Add To Cart" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." class="w-commerce-commerceaddtocartbutton submit-button" style="{% if product.available == false %} pointer-events: none; opacity: 0.5; {% endif %}">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        
+    </form>
+
+    <div data-node-type="commerce-add-to-cart-error" style="display:none" class="w-commerce-commerceaddtocarterror" udy-el="add-to-cart-errors">
+        <div 
+        data-node-type="commerce-add-to-cart-error" 
+        data-w-add-to-cart-quantity-error="Product is not available in this quantity." data-w-add-to-cart-general-error="Something went wrong when adding this item to the cart." data-w-add-to-cart-buy-now-error="Something went wrong when trying to purchase this item." data-w-add-to-cart-checkout-disabled-error="Checkout is disabled on this site.">
+            {{ 'collection.DIV_153' | t }}
+        </div>
+    </div>
+
+</div>

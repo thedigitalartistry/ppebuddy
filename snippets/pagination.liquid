@@ -1,0 +1,52 @@
+<div class="w-pagination-wrapper pagination-3">
+    {%- if paginate.pages > 1 -%}
+        <nav class="custom-pagination" role="navigation">
+            <ol class="pagination">
+                {%- if paginate.previous-%}
+                <li>
+                    <a href="{{ paginate.previous.url }}" class="w-pagination-previous previous">
+                        <div class="text-block-143 w-inline-block">{{ 'collection.DIV_154' | t }}</div>
+                        <img src="{{ 'arrow-left.png' | asset_url }}" loading="lazy" width="14.5" alt="">
+                    </a>
+                </li>
+                {%- else -%}
+                <li class="disabled">
+                    <a href="#" class="w-pagination-previous previous">
+                        <div class="text-block-143 w-inline-block">{{ 'collection.DIV_154' | t }}</div>
+                        <img src="{{ 'arrow-left.png' | asset_url }}" loading="lazy" width="14.5" alt="">
+                    </a>
+                </li>
+                {%- endif -%}
+
+                {%- assign paginate_checker = paginate.current_page | times: settings.collection_products_limit -%}
+                {%- if paginate.items > paginate_checker -%}
+                {%- assign paginate_final = paginate_checker -%}
+                {%- else -%}
+                {%- assign paginate_final = paginate.items -%}
+                {%- endif -%}
+
+                <div class="showing_result">
+                {{ paginate.current_offset | plus: 1 }} - {{ paginate_final }} of
+                {{ paginate.items }} 
+                </div>
+
+                {%- if paginate.next -%}
+                <li>
+                    <a href="{{ paginate.next.url }}" class="w-pagination-next next">
+                    <div class="text-block-142 w-inline-block">{{ 'collection.DIV_155' | t }}</div>
+                    <img src="{{ 'arrow-right.png' | asset_url }}" loading="lazy" width="14.5" alt="">
+                    </a>
+                </li>
+                {%- else -%}
+                <li class="disabled">
+                    <a href="#" class="w-pagination-next next">
+                    <div class="text-block-142 w-inline-block">{{ 'collection.DIV_155' | t }}</div>
+                    <img src="{{ 'arrow-right.png' | asset_url }}" loading="lazy" width="14.5" alt="">
+                    </a>
+                </li>
+                {%- endif -%}
+
+            </ol>
+        </nav>
+    {%- endif -%}
+</div>

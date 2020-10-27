@@ -1,0 +1,465 @@
+{% layout 'page.faq' %}
+  {% include 'case_counter' %} 
+  {% section 'header' %}
+  <div class="main">
+
+    {% include 'mobile_navigation' %}
+    
+    {% include 'mobile_menu_btn' %}
+
+    {% comment %} <div data-collapse="medium" data-animation="default" data-duration="400" data-no-scroll="1" role="banner" class="navbar w-nav"><a href="/" class="brand-2 w-nav-brand"><img src="{{ 'PPE-Buddy_logos_logo_blue.svg' | asset_url }}" alt=""></a>
+      <div class="nav-wrapper">
+        <div data-hover="1" data-delay="0" class="w-dropdown">
+          <div class="dropdown-toggle-2 w-dropdown-toggle">
+            <div class="icon-dropdown w-icon-dropdown-toggle"></div>
+            <div class="shop-text">{{ 'faq.DIV_61' | t }}</div>
+          </div>
+          <nav class="dropdown-list-3 w-dropdown-list">
+            <div class="links-container">{% for link in linklists['shop-menu-1'].links %}<a href="{{ link.url }}" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c02847f" class="shop-links w-dropdown-link">{{ link.title }}</a>{% endfor %}<a href="/collections/face-masks" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028481" class="shop-links w-dropdown-link">{{ 'faq.A_62' | t }}</a><a href="/collections/gloves" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028483" class="shop-links w-dropdown-link">{{ 'faq.A_63' | t }}</a><a href="/collections/sanitizers" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028485" class="shop-links w-dropdown-link">{{ 'faq.A_64' | t }}</a><a href="/collections/disinfecting-wipes" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028487" class="shop-links w-dropdown-link">{{ 'faq.A_65' | t }}</a><a href="/collections/kits" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028489" class="shop-links w-dropdown-link">{{ 'faq.A_66' | t }}</a></div>
+            <div class="image-container"><img src="{{ 'wipe-product.png' | asset_url }}" alt="" class="disinfecting-wipe-image"><img src="{{ 'products-banner-1.png' | asset_url }}" alt="" class="image-allproducts"><img src="{{ 'mask-product.png' | asset_url }}" width="204" alt="" class="face-mask-image"><img src="{{ 'sanitizer-product.png' | asset_url }}" width="204" alt="" class="sanitizer-image"><img src="{{ 'gloves-product.png' | asset_url }}" width="208" alt="" class="gloves-image"><img src="{{ 'ppekit-product.png' | asset_url }}" width="508" alt="" class="all-products-image"></div>
+            <div class="content-container">
+              <div class="content-container-all-products">
+                <div class="content-container-text">{{ 'faq.DIV_67' | t }}<br>{{ 'faq.DIV_68' | t }}</div>
+                <a href="#" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028498" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div class="text-block-129">{{ 'faq.DIV_69' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-face-masks">
+                <div class="content-container-text">{{ 'faq.DIV_70' | t }}</div>
+                <a href="#" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c02849e" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div>{{ 'faq.DIV_71' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-gloves">
+                <div class="content-container-text">{{ 'faq.DIV_72' | t }}</div>
+                <a href="#" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c0284a4" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div>{{ 'faq.DIV_73' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-sanitizers">
+                <div class="content-container-text">{{ 'faq.DIV_74' | t }}<br>{{ 'faq.DIV_75' | t }}</div>
+                <a href="#" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c0284ac" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div>{{ 'faq.DIV_76' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-wipes">
+                <div class="content-container-text">{{ 'faq.DIV_77' | t }}</div>
+                <a href="#" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c0284b2" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div>{{ 'faq.DIV_78' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-ppe-kits">
+                <div class="content-container-text">{{ 'faq.DIV_79' | t }}<br>{{ 'faq.DIV_80' | t }}</div>
+                <a href="#" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c0284ba" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div class="text-block-129">{{ 'faq.DIV_81' | t }}</div>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <nav role="navigation" class="main-menu w-nav-menu"><a href="#" class="megamenu-link w-nav-link">{{ 'faq.A_82' | t }}</a><a href="#" class="megamenu-link w-nav-link">{{ 'faq.A_83' | t }}</a></nav>
+        <div class="w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div>
+        <form action="/search" post-type="product" class="search-products-main w-form" method="get" role="search"><input type="search" class="search-input-main w-input" maxlength="256" name="q" placeholder="Search a product…" id="search" required="" value="{{ search.terms | escape }}"><input type="submit" value="Search" class="main-button search-box-main w-button">
+          <div class="div-block-339"></div>
+        </form>
+        <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightSidebar" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart-2"><a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink cart-button-2 w-inline-block"><img src="{{ 'shopping-cart-1.png' | asset_url }}" loading="lazy" width="20" alt=""><svg class="w-commerce-commercecartopenlinkicon icon-16" width="17px" height="17px" viewBox="0 0 17 17"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M2.60592789,2 L0,2 L0,0 L4.39407211,0 L4.84288393,4 L16,4 L16,9.93844589 L3.76940945,12.3694378 L2.60592789,2 Z M15.5,17 C14.6715729,17 14,16.3284271 14,15.5 C14,14.6715729 14.6715729,14 15.5,14 C16.3284271,14 17,14.6715729 17,15.5 C17,16.3284271 16.3284271,17 15.5,17 Z M5.5,17 C4.67157288,17 4,16.3284271 4,15.5 C4,14.6715729 4.67157288,14 5.5,14 C6.32842712,14 7,14.6715729 7,15.5 C7,16.3284271 6.32842712,17 5.5,17 Z" fill="currentColor" fill-rule="nonzero"></path></g></svg><div class="text-block-128 w-inline-block">{{ 'faq.DIV_84' | t }}</div><div class="w-commerce-commercecartopenlinkcount cart-quantity-4" udy-el="cart-count">{{ cart.item_count }}</div></a>
+          <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightSidebar">
+            <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer">
+              <div class="w-commerce-commercecartheader">
+                <h4 class="w-commerce-commercecartheading heading-81">{{ 'faq.H4_85' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink w-inline-block"><svg width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg></a></div>
+              <div class="w-commerce-commercecartformwrapper">
+                <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform default-state-4 {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                  
+                  
+                  <ul role="list" class="mini-cart-list" udy-el="items-list">
+                    {% for item in cart.items %}<li class="cart-item-2">
+                      <div class="mini-cart-row">
+                        <div class="variations-main-wrapper">
+                          <div class="mini-cart-featured-image" style="background-image: url({{ item | img_url: 'large' }})"></div>
+                          <div class="minicart-info">
+                            <div class="text-block-38">{{ item.product.title }}</div>
+                            <div class="text-block-39">{{ item.price | money }}</div><a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="link-9" udy-el="remove-item">{{ 'faq.A_86' | t }}</a></div>
+                        </div>
+                        <div class="cart-quantity-3">{{ item.quantity }}</div>
+                      </div>
+                    </li>{% endfor %}
+                  </ul>
+                  <div class="w-commerce-commercecartfooter {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                    <div class="w-commerce-commercecartlineitem">
+                      <div>{{ 'faq.DIV_87' | t }}</div>
+                      <div class="w-commerce-commercecartordervalue" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                    </div>
+                    <div>
+                      <div data-node-type="commerce-cart-quick-checkout-actions" class="web-payments-3">
+                        <a data-node-type="commerce-cart-apple-pay-button" style="background-image:-webkit-named-image(apple-pay-logo-white);background-size:100% 50%;background-position:50% 50%;background-repeat:no-repeat" class="w-commerce-commercecartapplepaybutton">
+                          <div></div>
+                        </a><a data-node-type="commerce-cart-quick-checkout-button" style="display:none" class="w-commerce-commercecartquickcheckoutbutton"><svg class="w-commerce-commercequickcheckoutgoogleicon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><defs><polygon id="google-mark-a" points="0 .329 3.494 .329 3.494 7.649 0 7.649"></polygon><polygon id="google-mark-c" points=".894 0 13.169 0 13.169 6.443 .894 6.443"></polygon></defs><g fill="none" fill-rule="evenodd"><path fill="#4285F4" d="M10.5967,12.0469 L10.5967,14.0649 L13.1167,14.0649 C14.6047,12.6759 15.4577,10.6209 15.4577,8.1779 C15.4577,7.6339 15.4137,7.0889 15.3257,6.5559 L7.8887,6.5559 L7.8887,9.6329 L12.1507,9.6329 C11.9767,10.6119 11.4147,11.4899 10.5967,12.0469"></path><path fill="#34A853" d="M7.8887,16 C10.0137,16 11.8107,15.289 13.1147,14.067 C13.1147,14.066 13.1157,14.065 13.1167,14.064 L10.5967,12.047 C10.5877,12.053 10.5807,12.061 10.5727,12.067 C9.8607,12.556 8.9507,12.833 7.8887,12.833 C5.8577,12.833 4.1387,11.457 3.4937,9.605 L0.8747,9.605 L0.8747,11.648 C2.2197,14.319 4.9287,16 7.8887,16"></path><g transform="translate(0 4)"><mask id="google-mark-b" fill="#fff"><use xlink:href="#google-mark-a"></use></mask><path fill="#FBBC04" d="M3.4639,5.5337 C3.1369,4.5477 3.1359,3.4727 3.4609,2.4757 L3.4639,2.4777 C3.4679,2.4657 3.4749,2.4547 3.4789,2.4427 L3.4939,0.3287 L0.8939,0.3287 C0.8799,0.3577 0.8599,0.3827 0.8459,0.4117 C-0.2821,2.6667 -0.2821,5.3337 0.8459,7.5887 L0.8459,7.5997 C0.8549,7.6167 0.8659,7.6317 0.8749,7.6487 L3.4939,5.6057 C3.4849,5.5807 3.4729,5.5587 3.4639,5.5337" mask="url(#google-mark-b)"></path></g><mask id="google-mark-d" fill="#fff"><use xlink:href="#google-mark-c"></use></mask><path fill="#EA4335" d="M0.894,4.3291 L3.478,6.4431 C4.113,4.5611 5.843,3.1671 7.889,3.1671 C9.018,3.1451 10.102,3.5781 10.912,4.3671 L13.169,2.0781 C11.733,0.7231 9.85,-0.0219 7.889,0.0001 C4.941,0.0001 2.245,1.6791 0.894,4.3291" mask="url(#google-mark-d)"></path></g></svg><svg class="w-commerce-commercequickcheckoutmicrosofticon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><polygon fill="#F05022" points="7 7 1 7 1 1 7 1"></polygon><polygon fill="#7DB902" points="15 7 9 7 9 1 15 1"></polygon><polygon fill="#00A4EE" points="7 15 1 15 1 9 7 9"></polygon><polygon fill="#FFB700" points="15 15 9 15 9 9 15 9"></polygon></g></svg><div>{{ 'faq.DIV_88' | t }}</div></a></div><a href="/checkout" value="Continue to Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton continue-to-checkout-button" data-loading-text="Hang Tight...">{{ 'faq.A_89' | t }}</a></div>
+                  </div>
+                </form>
+                <div class="w-commerce-commercecartemptystate empty-state-cart {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart"><img src="{{ 'empty-cart-icon-1.png' | asset_url }}" width="130" alt="" class="image-50">
+                  <div class="empty-cart-text">{{ 'faq.DIV_90' | t }}</div>
+                  <div class="empty-cart-text2">{{ 'faq.DIV_91' | t }}<br>{{ 'faq.DIV_92' | t }}</div>
+                  <a href="#PPE-KIT" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c02850d" class="empty-cart-button cc-jumbo-button cc-jumbo-blue z-7 w-inline-block">
+                    <div class="text-block-131">{{ 'faq.DIV_93' | t }}</div>
+                  </a>
+                </div>
+                <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate">
+                  <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="The order minimum was not met. Add more items to your cart to continue.">{{ 'faq.DIV_94' | t }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="cart-item-2" data-item-id="${item.id}">
+                      <div class="mini-cart-row">
+                        <div class="variations-main-wrapper">
+                          <div class="mini-cart-featured-image" style="background-image: url(${item.image})"></div>
+                          <div class="minicart-info">
+                            <div class="text-block-38">${item.title}</div>
+                            <div class="text-block-39">${item.price}</div><a href="${item.remove}" class="link-9" udy-el="remove-item">remove</a></div>
+                        </div>
+                        <div class="cart-quantity-3">${item.quantity}</div>
+                      </div>
+                    </li>`
+          }
+          </script></div>
+      </div>
+      <div class="account-button">
+        <div data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028513" class="account-details"><img src="{{ 'user-2.png' | asset_url }}" width="75" alt="" class="account-icon">{% if customer %}<a href="/account" class="link-block-12 w-inline-block"></a>{% endif %}</div>{% unless customer %}<a data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028516" href="/account/login" class="sign-in-button w-button">{{ 'faq.A_95' | t }}</a>{% endunless %}</div>
+    </div> {% endcomment %}
+
+
+    <div class="section">
+      <div class="container-main header"><img src="{{ 'Group-271.png' | asset_url }}" width="634" srcset="{{ 'Group-271-p-500.png' | asset_url }} 500w, {{ 'Group-271-p-800.png' | asset_url }} 800w, {{ 'Group-271.png' | asset_url }} 1268w" sizes="(max-width: 479px) 100vw, (max-width: 991px) 400px, 52vw" alt="" class="image-55">
+        <div class="search-container">
+          <h1 class="search-text">{{ 'faq.H1_96' | t }}</h1>
+          <form action="/search" post-type="product" class="search-products-faq w-form" method="get" role="search"><input type="search" class="search-input-faq w-input" maxlength="256" name="q" placeholder="Search a product…" id="search" required="" value="{{ search.terms | escape }}"><input type="submit" value="Search" class="main-button search-box-faq w-button"></form>
+        </div><img src="{{ 'Group-272.png' | asset_url }}" width="159" alt="" class="image-56"></div>
+    </div>
+    <div class="section">
+      <div class="container-main tabs-section">
+        <div class="faq-container">
+          <div data-w-id="642ed7e8-9095-3f80-3bfd-2b0a2daf26ea" class="tabs-dropdown">
+            <div class="text-block-140">{{ 'faq.DIV_97' | t }}</div>
+            <div class="div-block-328"></div>
+          </div>
+          <div data-duration-in="300" data-duration-out="100" class="faq-tabs w-tabs">
+            <div data-w-id="9f1bab08-0d28-3223-c289-b8c6ba9bdde3" class="tabs-menu-2 w-tab-menu">
+              <a data-w-tab="Tab 1" data-w-id="9f1bab08-0d28-3223-c289-b8c6ba9bdde4" class="tab-link-tab-1-3 w-inline-block w-tab-link w--current">
+                <div class="div-block-320"><img src="{{ 'Vector-1.png' | asset_url }}" width="34" alt="" class="faq-section-icon"><img src="{{ 'Vector5.png' | asset_url }}" width="34" alt="" class="image-57"></div>
+                <div class="text-block-139">{{ 'faq.DIV_98' | t }}</div>
+              </a>
+              <a data-w-tab="Tab 2" data-w-id="9f1bab08-0d28-3223-c289-b8c6ba9bdde7" class="tab-link-tab-2-2 w-inline-block w-tab-link">
+                <div class="div-block-321"><img src="{{ 'Vector6.png' | asset_url }}" width="34" alt="" class="faq-section-icon"><img src="{{ 'Vector.png' | asset_url }}" width="34" alt="" class="image-58"></div>
+                <div class="text-block-135">{{ 'faq.DIV_99' | t }}</div>
+              </a>
+              <a data-w-tab="Tab 3" data-w-id="9f1bab08-0d28-3223-c289-b8c6ba9bddea" class="tab-link-tab-3 w-inline-block w-tab-link">
+                <div class="div-block-322"><img src="{{ 'Vector7.png' | asset_url }}" width="34" alt="" class="faq-section-icon"><img src="{{ 'Vector2.png' | asset_url }}" width="34" alt="" class="image-59"></div>
+                <div class="text-block-137">{{ 'faq.DIV_100' | t }}</div>
+              </a>
+              <a data-w-tab="Tab 4" data-w-id="ca0b858b-dc81-b04d-3e4a-77b02dc6795b" class="tab-link-tab-2-4 w-inline-block w-tab-link">
+                <div class="div-block-323"><img src="{{ 'Vector8.png' | asset_url }}" width="34" alt="" class="faq-section-icon"><img src="{{ 'Vector3.png' | asset_url }}" width="34" alt="" class="image-60"></div>
+                <div class="text-block-136">{{ 'faq.DIV_101' | t }}</div>
+              </a>
+              <a data-w-tab="Tab 5" data-w-id="d47cc94a-1622-cd3b-1e3f-f1f77a2618a1" class="tab-link-tab-2-5 w-inline-block w-tab-link">
+                <div class="div-block-324"><img src="{{ 'Vector9.png' | asset_url }}" width="34" alt="" class="faq-section-icon"><img src="{{ 'Vector4.png' | asset_url }}" width="34" alt="" class="image-61"></div>
+                <div class="text-block-138">{{ 'faq.DIV_102' | t }}</div>
+              </a>
+            </div>
+            <div class="w-tab-content">
+              <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+                <div class="container-faq">
+                  <div class="w-layout-grid faq-grid">
+                    <div id="w-node-9a8fb9efdc71-249a5ae5" class="faq-wrapper">
+                      <div data-w-id="40e5fbc6-1d14-0e70-e878-9a8fb9efdc72" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="40e5fbc6-1d14-0e70-e878-9a8fb9efdc76" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_103' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_104' | t }}</p>
+                          <div class="div-block-319"></div>
+                        </div>
+                      </div>
+                      <div data-w-id="40e5fbc6-1d14-0e70-e878-9a8fb9efdc7c" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="40e5fbc6-1d14-0e70-e878-9a8fb9efdc80" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_105' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_106' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="40e5fbc6-1d14-0e70-e878-9a8fb9efdc85" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="40e5fbc6-1d14-0e70-e878-9a8fb9efdc89" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_107' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_108' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="40e5fbc6-1d14-0e70-e878-9a8fb9efdc8e" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="40e5fbc6-1d14-0e70-e878-9a8fb9efdc92" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_109' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_110' | t }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 2" class="w-tab-pane">
+                <div class="container-faq">
+                  <div class="w-layout-grid faq-grid">
+                    <div id="w-node-156493cf05d7-249a5ae5" class="faq-wrapper">
+                      <div data-w-id="a72aa49d-ca91-42a5-cfd8-156493cf05d8" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="a72aa49d-ca91-42a5-cfd8-156493cf05dc" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_111' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_112' | t }}</p>
+                          <div class="div-block-319"></div>
+                        </div>
+                      </div>
+                      <div data-w-id="a72aa49d-ca91-42a5-cfd8-156493cf05e2" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="a72aa49d-ca91-42a5-cfd8-156493cf05e6" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_113' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_114' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="a72aa49d-ca91-42a5-cfd8-156493cf05eb" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="a72aa49d-ca91-42a5-cfd8-156493cf05ef" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_115' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_116' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="a72aa49d-ca91-42a5-cfd8-156493cf05f4" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="a72aa49d-ca91-42a5-cfd8-156493cf05f8" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_117' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_118' | t }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 3" class="w-tab-pane">
+                <div class="container-faq">
+                  <div class="w-layout-grid faq-grid">
+                    <div id="w-node-36c3361e3235-249a5ae5" class="faq-wrapper">
+                      <div data-w-id="5b27be73-93ec-35ac-800b-36c3361e3236" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="5b27be73-93ec-35ac-800b-36c3361e323a" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_119' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_120' | t }}</p>
+                          <div class="div-block-319"></div>
+                        </div>
+                      </div>
+                      <div data-w-id="5b27be73-93ec-35ac-800b-36c3361e3240" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="5b27be73-93ec-35ac-800b-36c3361e3244" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_121' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_122' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="5b27be73-93ec-35ac-800b-36c3361e3249" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="5b27be73-93ec-35ac-800b-36c3361e324d" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_123' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_124' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="5b27be73-93ec-35ac-800b-36c3361e3252" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="5b27be73-93ec-35ac-800b-36c3361e3256" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_125' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_126' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="5b27be73-93ec-35ac-800b-36c3361e325b" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="5b27be73-93ec-35ac-800b-36c3361e325f" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_127' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_128' | t }}<br></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 4" class="w-tab-pane">
+                <div class="container-faq">
+                  <div class="w-layout-grid faq-grid">
+                    <div id="w-node-27f7f9530d02-249a5ae5" class="faq-wrapper">
+                      <div data-w-id="5406570f-d211-b4a7-992f-27f7f9530d03" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="5406570f-d211-b4a7-992f-27f7f9530d07" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_129' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_130' | t }}</p>
+                          <div class="div-block-319"></div>
+                        </div>
+                      </div>
+                      <div data-w-id="5406570f-d211-b4a7-992f-27f7f9530d0d" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="5406570f-d211-b4a7-992f-27f7f9530d11" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_131' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_132' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="5406570f-d211-b4a7-992f-27f7f9530d16" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="5406570f-d211-b4a7-992f-27f7f9530d1a" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_133' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_134' | t }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 5" class="w-tab-pane">
+                <div class="container-faq">
+                  <div class="w-layout-grid faq-grid">
+                    <div id="w-node-9d89ccd42998-249a5ae5" class="faq-wrapper">
+                      <div data-w-id="eed8e983-8be9-6bce-285e-9d89ccd42999" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="eed8e983-8be9-6bce-285e-9d89ccd4299d" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_135' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_136' | t }}</p>
+                          <div class="div-block-319"></div>
+                        </div>
+                      </div>
+                      <div data-w-id="eed8e983-8be9-6bce-285e-9d89ccd429a3" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="eed8e983-8be9-6bce-285e-9d89ccd429a7" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_137' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_138' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="eed8e983-8be9-6bce-285e-9d89ccd429ac" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="eed8e983-8be9-6bce-285e-9d89ccd429b0" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_139' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_140' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="eed8e983-8be9-6bce-285e-9d89ccd429b5" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="eed8e983-8be9-6bce-285e-9d89ccd429b9" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_141' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_142' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="eed8e983-8be9-6bce-285e-9d89ccd429be" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="eed8e983-8be9-6bce-285e-9d89ccd429c2" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_143' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_144' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="eed8e983-8be9-6bce-285e-9d89ccd429c7" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="eed8e983-8be9-6bce-285e-9d89ccd429cb" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_145' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_146' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="8976ea8a-0b1e-9e3f-f069-1523bbf12bd6" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="8976ea8a-0b1e-9e3f-f069-1523bbf12bda" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_147' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_148' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="dcadb987-bf47-7aec-6e12-cdcf4afcbeb9" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="dcadb987-bf47-7aec-6e12-cdcf4afcbebd" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_149' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_150' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="f716044e-6607-314a-98b3-c249a7d5e375" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="f716044e-6607-314a-98b3-c249a7d5e379" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_151' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_152' | t }}</p>
+                        </div>
+                      </div>
+                      <div data-w-id="95042505-a28c-367e-184a-bf8c1cc841b2" class="faq-question-wrap">
+                        <a href="#" class="faq-question-bar w-inline-block">
+                          <div data-w-id="95042505-a28c-367e-184a-bf8c1cc841b6" class="faq-circle"><img src="{{ 'plus.svg' | asset_url }}" alt="" class="plus-icon"></div>
+                          <div class="question-title">{{ 'faq.DIV_153' | t }}</div>
+                        </a>
+                        <div style="height:0PX" class="faq-content">
+                          <p class="faq-paragraph">{{ 'faq.P_154' | t }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {% section 'footer' %}
+
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5f1873fee0c93a114d25e26b" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}{{ 'option_selection.js' | shopify_asset_url | script_tag }}

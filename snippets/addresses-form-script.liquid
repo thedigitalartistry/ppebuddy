@@ -1,0 +1,10 @@
+<script>
+
+// Initiate provinces for the New Address form
+  new Shopify.CountryProvinceSelector('AddressCountryNew', 'AddressProvinceNew', {hideElement: 'AddressProvinceContainerNew'});
+
+// Initiate provinces for all existing addresses
+  {% for address in customer.addresses %}
+    new Shopify.CountryProvinceSelector('AddressCountry_{{address.id}}', 'AddressProvince_{{address.id}}', {hideElement: 'AddressProvinceContainer_{{address.id}}'});
+  {% endfor %}
+</script>

@@ -1,0 +1,115 @@
+{% layout 'customers_register' %}
+      
+  <div class="preloader"><img src="{{ 'logo_blue-1.png' | asset_url }}" width="200" alt="" class="logo-preloader">
+    <div data-w-id="bce50fe6-f179-2dd3-283e-6c552986c2d6" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5e3a95568c461017d7e7a30b/5e3be132807b8721620cf527_lf30_editor_n6xHam.json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="2.9696361820138772" data-duration="" class="lottie-animation-2"></div>
+  </div>
+  <div class="main">
+    <div data-collapse="medium" data-animation="default" data-duration="400" data-no-scroll="1" role="banner" class="navbar1 active-nav1 white w-nav">
+      <div class="nav1-wrap"><a href="/" id="w-node-03b6fa256c9c-fa256c9a" class="brand w-nav-brand"><img src="{{ 'PPE-Buddy_logos_logo_blue.svg' | asset_url }}" alt="" class="image"></a>
+        <div id="w-node-03b6fa256c9e-fa256c9a" class="nav1-menu-wrap">
+          <nav role="navigation" class="megamenu w-nav-menu">{% for link in linklists['menu'].links %}{% unless link.links != blank %}<a href="{{ link.url }}" class="nav-link-2 w-nav-link">{{ link.title }}</a>{% endunless %}
+            {% if link.links != blank %}<div data-hover="" data-delay="0" class="w-dropdown">
+              <div class="w-dropdown-toggle">
+                <div class="icon-15 w-icon-dropdown-toggle"></div>
+                <div class="text-block-125" data-href="{{ link.url }}">{{ link.title }}</div>
+              </div>
+              <nav class="dropdown-list w-dropdown-list">{% for child_link in link.links %}<a href="{{ child_link.url }}" class="dropdown-link w-dropdown-link">{{ child_link.title }}</a>{% endfor %}</nav>
+            </div>{% endif %}
+          {% endfor %}</nav>{% unless customer %}<a href="#" class="main-button w-button">{{ 'customers_register.A_0' | t }}</a>{% endunless %}{% if customer %}<a href="/account" class="main-button w-button">{{ 'customers_register.A_1' | t }}</a>{% endif %}
+          <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightSidebar" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart"><a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink cart-button w-inline-block"><img src="{{ '5ea444450e34982891325943_bag.svg' | asset_url }}" width="20" alt=""><div class="w-commerce-commercecartopenlinkcount cart-quantity" udy-el="cart-count">{{ cart.item_count }}</div></a>
+            <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightSidebar cart-wrap">
+              <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer cart-container">
+                <div class="w-commerce-commercecartheader cart-header"><img src="{{ '5ec6a8dcd2e207163b348b75_foodo.svg' | asset_url }}" width="83" alt="">
+                  <h4 class="w-commerce-commercecartheading cart-heading">{{ 'customers_register.H4_2' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink close-button w-inline-block"><img src="{{ 'CloseCart2x_1CloseCart2x.png' | asset_url }}" width="11" alt="" class="cart-close-icon"></a></div>
+                <div class="w-commerce-commercecartformwrapper">
+                  <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform default-state-2 {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                    
+                    
+                    <ul role="list" class="mini-cart-list" udy-el="items-list">
+                      {% for item in cart.items %}<li class="cart-item-2">
+                        <div class="mini-cart-row">
+                          <div class="variations-main-wrapper">
+                            <div class="mini-cart-featured-image" style="background-image: url({{ item | img_url: 'large' }})"></div>
+                            <div class="minicart-info">
+                              <div class="text-block-38">{{ item.product.title }}</div>
+                              <div class="text-block-39">{{ item.price | money }}</div><a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="link-9" udy-el="remove-item">{{ 'customers_register.A_3' | t }}</a></div>
+                          </div>
+                          <div class="cart-quantity-3">{{ item.quantity }}</div>
+                        </div>
+                      </li>{% endfor %}
+                    </ul>
+                    <div class="w-commerce-commercecartfooter cart-footer {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                      <div class="w-commerce-commercecartlineitem cart-line-item">
+                        <div class="size5-text">{{ 'customers_register.DIV_4' | t }}</div>
+                        <div class="w-commerce-commercecartordervalue size6-text" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                      </div>
+                      <div>
+                        <div data-node-type="commerce-cart-quick-checkout-actions" class="web-payments-2">
+                          <a data-node-type="commerce-cart-apple-pay-button" style="background-image:-webkit-named-image(apple-pay-logo-white);background-size:100% 50%;background-position:50% 50%;background-repeat:no-repeat" class="w-commerce-commercecartapplepaybutton web-payment-button">
+                            <div></div>
+                          </a><a data-node-type="commerce-cart-quick-checkout-button" style="display:none" class="w-commerce-commercecartquickcheckoutbutton"><svg class="w-commerce-commercequickcheckoutgoogleicon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><defs><polygon id="google-mark-a" points="0 .329 3.494 .329 3.494 7.649 0 7.649"></polygon><polygon id="google-mark-c" points=".894 0 13.169 0 13.169 6.443 .894 6.443"></polygon></defs><g fill="none" fill-rule="evenodd"><path fill="#4285F4" d="M10.5967,12.0469 L10.5967,14.0649 L13.1167,14.0649 C14.6047,12.6759 15.4577,10.6209 15.4577,8.1779 C15.4577,7.6339 15.4137,7.0889 15.3257,6.5559 L7.8887,6.5559 L7.8887,9.6329 L12.1507,9.6329 C11.9767,10.6119 11.4147,11.4899 10.5967,12.0469"></path><path fill="#34A853" d="M7.8887,16 C10.0137,16 11.8107,15.289 13.1147,14.067 C13.1147,14.066 13.1157,14.065 13.1167,14.064 L10.5967,12.047 C10.5877,12.053 10.5807,12.061 10.5727,12.067 C9.8607,12.556 8.9507,12.833 7.8887,12.833 C5.8577,12.833 4.1387,11.457 3.4937,9.605 L0.8747,9.605 L0.8747,11.648 C2.2197,14.319 4.9287,16 7.8887,16"></path><g transform="translate(0 4)"><mask id="google-mark-b" fill="#fff"><use xlink:href="#google-mark-a"></use></mask><path fill="#FBBC04" d="M3.4639,5.5337 C3.1369,4.5477 3.1359,3.4727 3.4609,2.4757 L3.4639,2.4777 C3.4679,2.4657 3.4749,2.4547 3.4789,2.4427 L3.4939,0.3287 L0.8939,0.3287 C0.8799,0.3577 0.8599,0.3827 0.8459,0.4117 C-0.2821,2.6667 -0.2821,5.3337 0.8459,7.5887 L0.8459,7.5997 C0.8549,7.6167 0.8659,7.6317 0.8749,7.6487 L3.4939,5.6057 C3.4849,5.5807 3.4729,5.5587 3.4639,5.5337" mask="url(#google-mark-b)"></path></g><mask id="google-mark-d" fill="#fff"><use xlink:href="#google-mark-c"></use></mask><path fill="#EA4335" d="M0.894,4.3291 L3.478,6.4431 C4.113,4.5611 5.843,3.1671 7.889,3.1671 C9.018,3.1451 10.102,3.5781 10.912,4.3671 L13.169,2.0781 C11.733,0.7231 9.85,-0.0219 7.889,0.0001 C4.941,0.0001 2.245,1.6791 0.894,4.3291" mask="url(#google-mark-d)"></path></g></svg><svg class="w-commerce-commercequickcheckoutmicrosofticon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><polygon fill="#F05022" points="7 7 1 7 1 1 7 1"></polygon><polygon fill="#7DB902" points="15 7 9 7 9 1 15 1"></polygon><polygon fill="#00A4EE" points="7 15 1 15 1 9 7 9"></polygon><polygon fill="#FFB700" points="15 15 9 15 9 9 15 9"></polygon></g></svg><div>{{ 'customers_register.DIV_5' | t }}</div></a></div>
+                        <div style="position:relative" data-wf-paypal-button="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;color&quot;:&quot;black&quot;,&quot;shape&quot;:&quot;rect&quot;,&quot;label&quot;:&quot;paypal&quot;,&quot;tagline&quot;:false}" class="paypal">
+                          <div style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;z-index:999;cursor:auto"></div>
+                        </div><a href="/checkout" value="Continue to Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton main-button" data-loading-text="Hang Tight...">{{ 'customers_register.A_6' | t }}</a></div>
+                    </div>
+                  </form>
+                  <div class="w-commerce-commercecartemptystate empty-state dark-cart-empty-state {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart">
+                    <div>{{ 'customers_register.DIV_7' | t }}</div>
+                  </div>
+                  <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate error-message">
+                    <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="Cart failed.">{{ 'customers_register.DIV_8' | t }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="cart-item-2" data-item-id="${item.id}">
+                        <div class="mini-cart-row">
+                          <div class="variations-main-wrapper">
+                            <div class="mini-cart-featured-image" style="background-image: url(${item.image})"></div>
+                            <div class="minicart-info">
+                              <div class="text-block-38">${item.title}</div>
+                              <div class="text-block-39">${item.price}</div><a href="${item.remove}" class="link-9" udy-el="remove-item">remove</a></div>
+                          </div>
+                          <div class="cart-quantity-3">${item.quantity}</div>
+                        </div>
+                      </li>`
+          }
+          </script></div>
+          <div class="menu-button w-nav-button"><img src="{{ 'menu-black.svg' | asset_url }}" width="15" alt="" class="menu-icon"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-24 register">
+      <div data-w-id="35adcf24-149c-e1ab-73a4-2467f029213a" style="opacity:0" class="left-content">
+        <div data-w-id="388ccb86-7e4d-fb02-ed5a-b3be0ed60f1b" style="-webkit-transform:translate3d(0, 100PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="registration-content-container">
+          <h1 class="heading-80">Be a Hero today.</h1>
+          <div class="text-block-133">Create an account and stay in the loop about perks and important updates!</div>
+        </div>
+      </div>
+      <div data-w-id="f9e8ed23-2881-92e3-da9a-3239b479825e" style="-webkit-transform:translate3d(500PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(500PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(500PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(500PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="right-content">
+        <div class="login-logo-wrapper"><img src="{{ 'PPE-Buddy_logos_logo_blue.svg' | asset_url }}" width="158" alt=""><a href="/" class="link-to-hompage w-inline-block"></a></div>
+        <div class="text-block-134">{{ 'customers_register.DIV_12' | t }}</div>
+        <div class="register-form---copy-this w-form">{% form 'create_customer' %}
+          {% unless form.posted_successfully? %}<div udesly-add-class="register-form"></div><label for="first_name" class="field-label-28">{{ 'customers_register.LABEL_13' | t }}</label><input type="text" class="text-field-10 w-input" maxlength="256" name="customer[first_name]" placeholder="First Name" id="first_name" required=""><label for="last_name" class="field-label-29">{{ 'customers_register.LABEL_14' | t }}</label><input type="text" class="text-field-10 w-input" maxlength="256" name="customer[last_name]" placeholder="Last Name" id="last_name" required=""><label for="email" class="field-label-30">{{ 'customers_register.LABEL_15' | t }}</label><input type="email" class="text-field-10 w-input" maxlength="256" name="customer[email]" placeholder="Email Address" id="email" required=""><label for="password" class="field-label-31">{{ 'customers_register.LABEL_16' | t }}</label><input type="password" class="text-field-10 w-input" maxlength="256" name="customer[password]" placeholder="Password" id="password" required=""><input type="submit" value="Register" data-wait="Please wait..." class="register-button w-button">{% endunless %}
+          
+          
+        </div><div class="register-form---copy-this w-form">{% if form.errors %}<div class="w-form-fail" style="display: inherit;">
+            <div>{% include 'form-errors' %}</div>
+          </div>{% endif %}{% if form.posted_successfully? %}<div class="w-form-done" style="display: inherit;">
+            <div>{{ 'customers_register.DIV_17' | t }}</div>
+          </div>{% endif %}</div>{% endform %}
+        <div class="text-block-145">{{ 'customers_register.DIV_18' | t }}</div><a href="/account/login" class="link-11">{{ 'customers_register.A_19' | t }}</a>
+        <div class="text-block-146 register">{{ 'customers_register.DIV_20' | t }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-landscape-message">
+    <h1 class="heading-79">{{ 'customers_register.H1_21' | t }}<br>{{ 'customers_register.H1_22' | t }}</h1>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5f1873fee0c93a114d25e26b" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}{{ 'option_selection.js' | shopify_asset_url | script_tag }}

@@ -1,0 +1,907 @@
+{% layout 'theme' %}
+  {% include 'case_counter' %}
+  {% section 'header' %}
+  <div class="preloader"><img src="{{ 'logo_blue-1.png' | asset_url }}" width="200" alt="" class="logo-preloader">
+    <div data-w-id="bce50fe6-f179-2dd3-283e-6c552986c2d6" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5e3a95568c461017d7e7a30b/5e3be132807b8721620cf527_lf30_editor_n6xHam.json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="2.9696361820138772" data-duration="" class="lottie-animation-2"></div>
+  </div>
+  <div class="main">
+
+    {% comment %} <div data-collapse="medium" data-animation="default" data-duration="400" data-no-scroll="1" role="banner" class="navbar w-nav"><a href="/" aria-current="page" class="brand-2 w-nav-brand w--current"><img src="{{ 'PPE-Buddy_logos_logo_blue.svg' | asset_url }}" alt=""></a>
+      <div class="nav-wrapper">
+        <div data-hover="1" data-delay="0" class="w-dropdown">
+          <div class="dropdown-toggle-2 w-dropdown-toggle">
+            <div class="icon-dropdown w-icon-dropdown-toggle"></div>
+            <div class="shop-text">{{ 'index.DIV_0' | t }}</div>
+          </div>
+          <nav class="dropdown-list-3 w-dropdown-list">
+            <div class="links-container">{% for link in linklists['shop-menu-1'].links %}<a href="{{ link.url }}" data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43c14" class="shop-links w-dropdown-link">{{ link.title }}</a>{% endfor %}<a href="/collections/face-masks" data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43c16" class="shop-links w-dropdown-link">{{ 'index.A_1' | t }}</a><a href="/collections/gloves" data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43c18" class="shop-links w-dropdown-link">{{ 'index.A_2' | t }}</a><a href="/collections/sanitizers" data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43c1a" class="shop-links w-dropdown-link">{{ 'index.A_3' | t }}</a><a href="/collections/disinfecting-wipes" data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43c1c" class="shop-links w-dropdown-link">{{ 'index.A_4' | t }}</a><a href="/collections/kits" data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43c1e" class="shop-links w-dropdown-link">{{ 'index.A_5' | t }}</a></div>
+            <div class="image-container"><img src="{{ 'wipe-product.png' | asset_url }}" alt="" class="disinfecting-wipe-image"><img src="{{ 'products-banner-1.png' | asset_url }}" alt="" class="image-allproducts"><img src="{{ 'mask-product.png' | asset_url }}" width="204" alt="" class="face-mask-image"><img src="{{ 'sanitizer-product.png' | asset_url }}" width="204" alt="" class="sanitizer-image"><img src="{{ 'gloves-product.png' | asset_url }}" width="208" alt="" class="gloves-image"><img src="{{ 'ppekit-product.png' | asset_url }}" width="508" alt="" class="all-products-image"></div>
+            <div class="content-container">
+              <div class="content-container-all-products">
+                <div class="content-container-text">{{ 'index.DIV_6' | t }}<br>{{ 'index.DIV_7' | t }}</div>
+                <a href="#" data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43c2d" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div class="text-block-129">{{ 'index.DIV_8' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-face-masks">
+                <div class="content-container-text">{{ 'index.DIV_9' | t }}</div>
+                <a href="#" data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43c33" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div>{{ 'index.DIV_10' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-gloves">
+                <div class="content-container-text">{{ 'index.DIV_11' | t }}</div>
+                <a href="#" data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43c39" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div>{{ 'index.DIV_12' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-sanitizers">
+                <div class="content-container-text">{{ 'index.DIV_13' | t }}<br>{{ 'index.DIV_14' | t }}</div>
+                <a href="#" data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43c41" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div>{{ 'index.DIV_15' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-wipes">
+                <div class="content-container-text">{{ 'index.DIV_16' | t }}</div>
+                <a href="#" data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43c47" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div>{{ 'index.DIV_17' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-ppe-kits">
+                <div class="content-container-text">{{ 'index.DIV_18' | t }}<br>{{ 'index.DIV_19' | t }}</div>
+                <a href="{{ routes.root_url }}" data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43c4f" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div class="text-block-129">{{ 'index.DIV_20' | t }}</div>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <nav role="navigation" class="main-menu w-nav-menu"><a href="{{ routes.root_url }}#KIT-COMPARISON" class="megamenu-link w-nav-link">{{ 'index.A_21' | t }}</a><a href="{{ routes.root_url }}#Private-Label" class="megamenu-link w-nav-link">{{ 'index.A_22' | t }}</a></nav>
+        <div class="w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div>
+        <form action="/search" post-type="product" class="search-products-main w-form" method="get" role="search"><input type="search" class="search-input-main w-input" maxlength="256" name="q" placeholder="Search a product…" id="search" required="" value="{{ search.terms | escape }}"><input type="submit" value="Search" class="main-button search-box-main w-button">
+          <div class="div-block-339"></div>
+        </form>
+        <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightSidebar" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart-2"><a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink cart-button-2 w-inline-block"><img src="{{ 'shopping-cart-1.png' | asset_url }}" loading="lazy" width="20" alt=""><svg class="w-commerce-commercecartopenlinkicon icon-16" width="17px" height="17px" viewBox="0 0 17 17"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M2.60592789,2 L0,2 L0,0 L4.39407211,0 L4.84288393,4 L16,4 L16,9.93844589 L3.76940945,12.3694378 L2.60592789,2 Z M15.5,17 C14.6715729,17 14,16.3284271 14,15.5 C14,14.6715729 14.6715729,14 15.5,14 C16.3284271,14 17,14.6715729 17,15.5 C17,16.3284271 16.3284271,17 15.5,17 Z M5.5,17 C4.67157288,17 4,16.3284271 4,15.5 C4,14.6715729 4.67157288,14 5.5,14 C6.32842712,14 7,14.6715729 7,15.5 C7,16.3284271 6.32842712,17 5.5,17 Z" fill="currentColor" fill-rule="nonzero"></path></g></svg><div class="text-block-128 w-inline-block">{{ 'index.DIV_23' | t }}</div><div class="w-commerce-commercecartopenlinkcount cart-quantity-4" udy-el="cart-count">{{ cart.item_count }}</div></a>
+          <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightSidebar">
+            <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer">
+              <div class="w-commerce-commercecartheader">
+                <h4 class="w-commerce-commercecartheading heading-81">{{ 'index.H4_24' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink w-inline-block"><svg width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg></a></div>
+              <div class="w-commerce-commercecartformwrapper">
+                <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform default-state-4 {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                  
+                  <ul role="list" class="mini-cart-list" udy-el="items-list">
+                    {% for item in cart.items %}
+                    <li class="cart-item-2">
+                      <div class="mini-cart-row">
+                        <div class="variations-main-wrapper">
+                          <div class="mini-cart-featured-image" style="background-image: url({{ item | img_url: 'large' }})"></div>
+                          <div class="minicart-info">
+                            <div class="text-block-38">{{ item.product.title }}</div>
+                            <div class="text-block-39">{{ item.price | money }}</div><a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="link-9" udy-el="remove-item">{{ 'index.A_25' | t }}</a></div>
+                        </div>
+                        <div class="cart-quantity-3">{{ item.quantity }}</div>
+                      </div>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                  <div class="w-commerce-commercecartfooter {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                    <div class="w-commerce-commercecartlineitem">
+                      <div>{{ 'index.DIV_26' | t }}</div>
+                      <div class="w-commerce-commercecartordervalue" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                    </div>
+                    <div>
+                      <div data-node-type="commerce-cart-quick-checkout-actions" class="web-payments-3">
+                        <a data-node-type="commerce-cart-apple-pay-button" style="background-image:-webkit-named-image(apple-pay-logo-white);background-size:100% 50%;background-position:50% 50%;background-repeat:no-repeat" class="w-commerce-commercecartapplepaybutton">
+                          <div></div>
+                        </a><a data-node-type="commerce-cart-quick-checkout-button" style="display:none" class="w-commerce-commercecartquickcheckoutbutton"><svg class="w-commerce-commercequickcheckoutgoogleicon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><defs><polygon id="google-mark-a" points="0 .329 3.494 .329 3.494 7.649 0 7.649"></polygon><polygon id="google-mark-c" points=".894 0 13.169 0 13.169 6.443 .894 6.443"></polygon></defs><g fill="none" fill-rule="evenodd"><path fill="#4285F4" d="M10.5967,12.0469 L10.5967,14.0649 L13.1167,14.0649 C14.6047,12.6759 15.4577,10.6209 15.4577,8.1779 C15.4577,7.6339 15.4137,7.0889 15.3257,6.5559 L7.8887,6.5559 L7.8887,9.6329 L12.1507,9.6329 C11.9767,10.6119 11.4147,11.4899 10.5967,12.0469"></path><path fill="#34A853" d="M7.8887,16 C10.0137,16 11.8107,15.289 13.1147,14.067 C13.1147,14.066 13.1157,14.065 13.1167,14.064 L10.5967,12.047 C10.5877,12.053 10.5807,12.061 10.5727,12.067 C9.8607,12.556 8.9507,12.833 7.8887,12.833 C5.8577,12.833 4.1387,11.457 3.4937,9.605 L0.8747,9.605 L0.8747,11.648 C2.2197,14.319 4.9287,16 7.8887,16"></path><g transform="translate(0 4)"><mask id="google-mark-b" fill="#fff"><use xlink:href="#google-mark-a"></use></mask><path fill="#FBBC04" d="M3.4639,5.5337 C3.1369,4.5477 3.1359,3.4727 3.4609,2.4757 L3.4639,2.4777 C3.4679,2.4657 3.4749,2.4547 3.4789,2.4427 L3.4939,0.3287 L0.8939,0.3287 C0.8799,0.3577 0.8599,0.3827 0.8459,0.4117 C-0.2821,2.6667 -0.2821,5.3337 0.8459,7.5887 L0.8459,7.5997 C0.8549,7.6167 0.8659,7.6317 0.8749,7.6487 L3.4939,5.6057 C3.4849,5.5807 3.4729,5.5587 3.4639,5.5337" mask="url(#google-mark-b)"></path></g><mask id="google-mark-d" fill="#fff"><use xlink:href="#google-mark-c"></use></mask><path fill="#EA4335" d="M0.894,4.3291 L3.478,6.4431 C4.113,4.5611 5.843,3.1671 7.889,3.1671 C9.018,3.1451 10.102,3.5781 10.912,4.3671 L13.169,2.0781 C11.733,0.7231 9.85,-0.0219 7.889,0.0001 C4.941,0.0001 2.245,1.6791 0.894,4.3291" mask="url(#google-mark-d)"></path></g></svg><svg class="w-commerce-commercequickcheckoutmicrosofticon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><polygon fill="#F05022" points="7 7 1 7 1 1 7 1"></polygon><polygon fill="#7DB902" points="15 7 9 7 9 1 15 1"></polygon><polygon fill="#00A4EE" points="7 15 1 15 1 9 7 9"></polygon><polygon fill="#FFB700" points="15 15 9 15 9 9 15 9"></polygon></g></svg><div>{{ 'index.DIV_27' | t }}</div></a></div><a href="/checkout" value="Continue to Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton continue-to-checkout-button" data-loading-text="Hang Tight...">{{ 'index.A_28' | t }}</a></div>
+                  </div>
+                </form>
+                <div class="w-commerce-commercecartemptystate empty-state-cart {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart"><img src="{{ 'empty-cart-icon-1.png' | asset_url }}" width="130" alt="" class="image-50">
+                  <div class="empty-cart-text">{{ 'index.DIV_29' | t }}</div>
+                  <div class="empty-cart-text2">{{ 'index.DIV_30' | t }}<br>{{ 'index.DIV_31' | t }}</div>
+                  <a href="#PPE-KIT" data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43ca4" class="empty-cart-button cc-jumbo-button cc-jumbo-blue z-7 w-inline-block">
+                    <div class="text-block-131">{{ 'index.DIV_32' | t }}</div>
+                  </a>
+                </div>
+                <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate">
+                  <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="The order minimum was not met. Add more items to your cart to continue.">{{ 'index.DIV_33' | t }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="cart-item-2" data-item-id="${item.id}">
+                      <div class="mini-cart-row">
+                        <div class="variations-main-wrapper">
+                          <div class="mini-cart-featured-image" style="background-image: url(${item.image})"></div>
+                          <div class="minicart-info">
+                            <div class="text-block-38">${item.title}</div>
+                            <div class="text-block-39">${item.price}</div><a href="${item.remove}" class="link-9" udy-el="remove-item">remove</a></div>
+                        </div>
+                        <div class="cart-quantity-3">${item.quantity}</div>
+                      </div>
+                    </li>`
+          }
+          </script></div>
+      </div>
+      <div class="account-button">
+        <div data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43caa" class="account-details"><img src="{{ 'user-2.png' | asset_url }}" width="75" alt="" class="account-icon">{% if customer %}<a href="/account" class="link-block-12 w-inline-block"></a>{% endif %}</div>{% unless customer %}<a data-w-id="2fb4430a-d55b-2737-08a7-a7df66d43cad" href="/account/login" class="sign-in-button w-button">{{ 'index.A_34' | t }}</a>{% endunless %}</div>
+    </div> {% endcomment %}
+
+    {% include 'mobile_menu_btn' %}
+    
+    {% include 'mobile_navigation' %}
+
+    <div data-collapse="medium" data-animation="default" data-duration="400" data-no-scroll="1" role="banner" class="navbar1 active-nav1 white w-nav">
+      <div class="nav1-wrap"><a href="/" id="w-node-03b6fa256c9c-fa256c9a" aria-current="page" class="brand w-nav-brand w--current"><img src="{{ 'PPE-Buddy_logos_logo_blue.svg' | asset_url }}" alt="" class="image"></a>
+        <div id="w-node-03b6fa256c9e-fa256c9a" class="nav1-menu-wrap">
+          <nav role="navigation" class="megamenu w-nav-menu">{% for link in linklists['menu'].links %}{% unless link.links != blank %}<a href="{{ link.url }}" class="nav-link-2 w-nav-link">{{ link.title }}</a>{% endunless %}
+            {% if link.links != blank %}<div data-hover="" data-delay="0" class="w-dropdown">
+              <div class="w-dropdown-toggle">
+                <div class="icon-15 w-icon-dropdown-toggle"></div>
+                <div class="text-block-125" data-href="{{ link.url }}">{{ link.title }}</div>
+              </div>
+              <nav class="dropdown-list w-dropdown-list">{% for child_link in link.links %}<a href="{{ child_link.url }}" class="dropdown-link w-dropdown-link">{{ child_link.title }}</a>{% endfor %}</nav>
+            </div>{% endif %}
+          {% endfor %}</nav>{% unless customer %}<a href="#" class="main-button w-button">{{ 'index.A_96' | t }}</a>{% endunless %}{% if customer %}<a href="/account" class="main-button w-button">{{ 'index.A_97' | t }}</a>{% endif %}
+          <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightSidebar" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart"><a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink cart-button w-inline-block"><img src="{{ '5ea444450e34982891325943_bag.svg' | asset_url }}" width="20" alt=""><div class="w-commerce-commercecartopenlinkcount cart-quantity" udy-el="cart-count">{{ cart.item_count }}</div></a>
+            <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightSidebar cart-wrap">
+              <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer cart-container">
+                <div class="w-commerce-commercecartheader cart-header"><img src="{{ '5ec6a8dcd2e207163b348b75_foodo.svg' | asset_url }}" width="83" alt="">
+                  <h4 class="w-commerce-commercecartheading cart-heading">{{ 'index.H4_98' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink close-button w-inline-block"><img src="{{ 'CloseCart2x_1CloseCart2x.png' | asset_url }}" width="11" alt="" class="cart-close-icon"></a></div>
+                <div class="w-commerce-commercecartformwrapper">
+                  <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform default-state-2 {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                    
+                    
+                    <ul role="list" class="mini-cart-list" udy-el="items-list">
+                      {% for item in cart.items %}<li class="cart-item-2">
+                        <div class="mini-cart-row">
+                          <div class="variations-main-wrapper">
+                            <div class="mini-cart-featured-image" style="background-image: url({{ item | img_url: 'large' }})"></div>
+                            <div class="minicart-info">
+                              <div class="text-block-38">{{ item.product.title }}</div>
+                              <div class="text-block-39">{{ item.price | money }}</div><a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="link-9" udy-el="remove-item">{{ 'index.A_99' | t }}</a></div>
+                          </div>
+                          <div class="cart-quantity-3">{{ item.quantity }}</div>
+                        </div>
+                      </li>{% endfor %}
+                    </ul>
+                    <div class="w-commerce-commercecartfooter cart-footer {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                      <div class="w-commerce-commercecartlineitem cart-line-item">
+                        <div class="size5-text">{{ 'index.DIV_100' | t }}</div>
+                        <div class="w-commerce-commercecartordervalue size6-text" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                      </div>
+                      <div>
+                        <div data-node-type="commerce-cart-quick-checkout-actions" class="web-payments-2">
+                          <a data-node-type="commerce-cart-apple-pay-button" style="background-image:-webkit-named-image(apple-pay-logo-white);background-size:100% 50%;background-position:50% 50%;background-repeat:no-repeat" class="w-commerce-commercecartapplepaybutton web-payment-button">
+                            <div></div>
+                          </a><a data-node-type="commerce-cart-quick-checkout-button" style="display:none" class="w-commerce-commercecartquickcheckoutbutton"><svg class="w-commerce-commercequickcheckoutgoogleicon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><defs><polygon id="google-mark-a" points="0 .329 3.494 .329 3.494 7.649 0 7.649"></polygon><polygon id="google-mark-c" points=".894 0 13.169 0 13.169 6.443 .894 6.443"></polygon></defs><g fill="none" fill-rule="evenodd"><path fill="#4285F4" d="M10.5967,12.0469 L10.5967,14.0649 L13.1167,14.0649 C14.6047,12.6759 15.4577,10.6209 15.4577,8.1779 C15.4577,7.6339 15.4137,7.0889 15.3257,6.5559 L7.8887,6.5559 L7.8887,9.6329 L12.1507,9.6329 C11.9767,10.6119 11.4147,11.4899 10.5967,12.0469"></path><path fill="#34A853" d="M7.8887,16 C10.0137,16 11.8107,15.289 13.1147,14.067 C13.1147,14.066 13.1157,14.065 13.1167,14.064 L10.5967,12.047 C10.5877,12.053 10.5807,12.061 10.5727,12.067 C9.8607,12.556 8.9507,12.833 7.8887,12.833 C5.8577,12.833 4.1387,11.457 3.4937,9.605 L0.8747,9.605 L0.8747,11.648 C2.2197,14.319 4.9287,16 7.8887,16"></path><g transform="translate(0 4)"><mask id="google-mark-b" fill="#fff"><use xlink:href="#google-mark-a"></use></mask><path fill="#FBBC04" d="M3.4639,5.5337 C3.1369,4.5477 3.1359,3.4727 3.4609,2.4757 L3.4639,2.4777 C3.4679,2.4657 3.4749,2.4547 3.4789,2.4427 L3.4939,0.3287 L0.8939,0.3287 C0.8799,0.3577 0.8599,0.3827 0.8459,0.4117 C-0.2821,2.6667 -0.2821,5.3337 0.8459,7.5887 L0.8459,7.5997 C0.8549,7.6167 0.8659,7.6317 0.8749,7.6487 L3.4939,5.6057 C3.4849,5.5807 3.4729,5.5587 3.4639,5.5337" mask="url(#google-mark-b)"></path></g><mask id="google-mark-d" fill="#fff"><use xlink:href="#google-mark-c"></use></mask><path fill="#EA4335" d="M0.894,4.3291 L3.478,6.4431 C4.113,4.5611 5.843,3.1671 7.889,3.1671 C9.018,3.1451 10.102,3.5781 10.912,4.3671 L13.169,2.0781 C11.733,0.7231 9.85,-0.0219 7.889,0.0001 C4.941,0.0001 2.245,1.6791 0.894,4.3291" mask="url(#google-mark-d)"></path></g></svg><svg class="w-commerce-commercequickcheckoutmicrosofticon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><polygon fill="#F05022" points="7 7 1 7 1 1 7 1"></polygon><polygon fill="#7DB902" points="15 7 9 7 9 1 15 1"></polygon><polygon fill="#00A4EE" points="7 15 1 15 1 9 7 9"></polygon><polygon fill="#FFB700" points="15 15 9 15 9 9 15 9"></polygon></g></svg><div>{{ 'index.DIV_101' | t }}</div></a></div>
+                        <div style="position:relative" data-wf-paypal-button="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;color&quot;:&quot;black&quot;,&quot;shape&quot;:&quot;rect&quot;,&quot;label&quot;:&quot;paypal&quot;,&quot;tagline&quot;:false}" class="paypal">
+                          <div style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;z-index:999;cursor:auto"></div>
+                        </div><a href="/checkout" value="Continue to Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton main-button" data-loading-text="Hang Tight...">{{ 'index.A_102' | t }}</a></div>
+                    </div>
+                  </form>
+                  <div class="w-commerce-commercecartemptystate empty-state dark-cart-empty-state {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart">
+                    <div>{{ 'index.DIV_103' | t }}</div>
+                  </div>
+                  <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate error-message">
+                    <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="Cart failed.">{{ 'index.DIV_104' | t }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="cart-item-2" data-item-id="${item.id}">
+                        <div class="mini-cart-row">
+                          <div class="variations-main-wrapper">
+                            <div class="mini-cart-featured-image" style="background-image: url(${item.image})"></div>
+                            <div class="minicart-info">
+                              <div class="text-block-38">${item.title}</div>
+                              <div class="text-block-39">${item.price}</div><a href="${item.remove}" class="link-9" udy-el="remove-item">remove</a></div>
+                          </div>
+                          <div class="cart-quantity-3">${item.quantity}</div>
+                        </div>
+                      </li>`
+          }
+          </script></div>
+          <div class="menu-button w-nav-button"><img src="{{ 'menu-black.svg' | asset_url }}" width="15" alt="" class="menu-icon"></div>
+        </div>
+      </div>
+    </div>
+    <div data-w-id="6fad3366-ef54-75b0-e6b4-5037610dbb91" class="home-labeling-2"><img src="{{ 'hand-sanitizer.png' | asset_url }}" data-w-id="6fad3366-ef54-75b0-e6b4-5037610dbb92" alt="" class="image-10"><img src="{{ 'Sanitizer-single-use.png' | asset_url }}" data-w-id="6fad3366-ef54-75b0-e6b4-5037610dbb93" alt="" class="image-11"><img src="{{ 'Single-use-wipes.png' | asset_url }}" data-w-id="6fad3366-ef54-75b0-e6b4-5037610dbb94" alt="" class="image-12"><img src="{{ 'Disinfection-Wipes-opt.png' | asset_url }}" data-w-id="6fad3366-ef54-75b0-e6b4-5037610dbb95" sizes="(max-width: 479px) 100vw, (max-width: 991px) 205.375px, 222.484375px" alt="" srcset="{{ 'Disinfection-Wipes-opt-p-500.png' | asset_url }} 500w, {{ 'Disinfection-Wipes-opt.png' | asset_url }} 700w" class="image-13"><img src="{{ 'PPE-kit.png' | asset_url }}" data-w-id="6fad3366-ef54-75b0-e6b4-5037610dbb96" alt="" class="image-14"></div>
+    <div id="HOME" class="section top-85px">
+      <div data-w-id="1cb6c2c6-284e-75c7-d31b-8d9e3cc830c4" class="white-bg-absolute"></div>
+      <div class="intro-header">
+        <div class="intro-content cc-homepage">
+          <div class="intro-text z-5">
+            <div data-w-id="1cb6c2c6-284e-75c7-d31b-8d9e3cc830c8" style="opacity:0" class="heading-jumbo">{{ 'index.DIV_105' | t }}<br></div>
+            <div data-w-id="1cb6c2c6-284e-75c7-d31b-8d9e3cc830cb" style="opacity:0" class="paragraph-bigger cc-bigger-white-light">{{ 'index.DIV_106' | t }}<br></div>
+          </div>
+          <a href="#PPE-KIT" data-w-id="1cb6c2c6-284e-75c7-d31b-8d9e3cc830ce" style="opacity:0" class="button-10 cc-jumbo-button cc-jumbo-blue z-7 w-inline-block">
+            <div>{{ 'index.DIV_107' | t }}</div>
+          </a>
+        </div>
+        <a href="#PPE-KIT" data-w-id="1cb6c2c6-284e-75c7-d31b-8d9e3cc830d1" style="opacity:0" class="scroll-down-wrapper w-inline-block">
+          <div class="scroll-down">{{ 'index.DIV_108' | t }}</div>
+          <div class="down-arrow"></div>
+        </a>
+      </div>
+    </div>
+    <div id="PPE-KIT" class="section _100vh intro">
+      <div class="container-main">
+        <div class="div-block-17">
+          <div data-w-id="8ded44b1-d5ec-6fad-31ff-96f7c2640589" class="product-group">
+            <div class="pointer product-fm">
+              <a href="https://ppebuddytest.myshopify.com/products/ppepack-plane-event" class="product-title-pop-up sanitizer w-inline-block">
+                <h6 class="lower-case">PPE Kit</h6>
+              </a>
+            </div>
+            <div class="pointer product-disinfect">
+              <a href="https://ppebuddytest.myshopify.com/products/50pc-disenfecting-wipe-pack" class="product-title-pop-up disinfecting w-inline-block">
+                <h6 class="lower-case">Wipe</h6>
+              </a>
+            </div>
+            <div class="pointer sanitizer">
+              <a href="https://ppebuddytest.myshopify.com/products/hand-sanitizer-24-pack" class="product-title-pop-up w-inline-block">
+                <h6 class="lower-case">Sanitizer</h6>
+              </a>
+            </div>
+          </div>
+          <div class="div-block-16">
+            <div data-w-id="8ded44b1-d5ec-6fad-31ff-96f7c2640597" class="heading-jumbo-small">{{ 'index.DIV_112' | t }}</div>
+            <div data-w-id="8ded44b1-d5ec-6fad-31ff-96f7c2640599" class="paragraph-bigger">{{ 'index.DIV_113' | t }}<br></div>
+            <div data-w-id="8ded44b1-d5ec-6fad-31ff-96f7c264059c" class="paragraph-light">{{ 'index.DIV_114' | t }}<br></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cares-banner hidden">
+      <img class="image-tag" src="https://cdn.shopify.com/s/files/1/0443/9264/4760/files/Broadway_Cares_Banner_for_Websites.png?v=1603474638">
+        <div class="content">
+          <h4>We are excited to announce that we are an official sponsor of</h4>
+          <h2>Virtual Broadway Halloween Bash for Kidz</h2>
+          <p>Performances by Jay Armstrong Johnson, Jackie Burns, Lesli Margherita, Syndee Winters, Thayne Jasperson, Kara Lindsay, Rachel Potter, Mehret Marsh, DeMarius R. Copes, Charissa Hogeland, Amanda Williams Allison Robinson.</p>
+          <a href="#" class="btn-link">Get Tickets!</a>
+      </div>
+    </div>
+
+    <div class="section banner-shop">
+      <div class="container-main">
+        <div class="banner"><img src="{{ 'products-banner-1.png' | asset_url }}" width="508" data-w-id="36cba7e2-9e4a-a0ce-9e58-8b0e5e8e2c40" alt="" class="banner-kit-image">
+          <div class="banner-content">
+            <div data-w-id="107321c8-559d-ea71-56fb-2038e358fe0b" style="opacity:0" class="heading-jumbo-small white-text">{{ 'index.DIV_115' | t }}</div>
+            <div data-w-id="edfaf976-25af-7161-8ca0-653bc90697d1" style="opacity:0" class="paragraph-bigger white-text">{{ 'index.DIV_116' | t }}<br>{{ 'index.DIV_117' | t }}</div>
+            <a href="/collections/main-collection" data-w-id="85efb435-7d04-9ea7-64e4-291c9abbe3da" style="opacity:0" class="button-10 cc-jumbo-button blue-to-white w-inline-block">
+              <div>{{ 'index.DIV_118' | t }}</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="KIT-COMPARISON" class="section _100vh curated-kit-new">
+
+      <div id="feature-product-carousel" class="owl-carousel">
+        <a href="https://ppebuddytest.myshopify.com/products/1-pack-mask"> <img src="https://cdn.shopify.com/s/files/1/0443/9264/4760/files/1_pack_face_mask.png?v=1602725395" /> </a>
+        <a href="https://ppebuddytest.myshopify.com/products/50-piece-3-ply-mask-box"><img src="https://cdn.shopify.com/s/files/1/0443/9264/4760/files/50_pcs_mask_box.png?v=1602725619" /></a>
+        <a href="https://ppebuddytest.myshopify.com/products/50-piece-3-ply-mask-case"><img src="https://cdn.shopify.com/s/files/1/0443/9264/4760/files/50_pcs_Mask_Case.png?v=1602725768" /></a>
+        <a href="https://ppebuddytest.myshopify.com/products/hand-sanitizer-24-pack"><img src="https://cdn.shopify.com/s/files/1/0443/9264/4760/files/24_Pack_Sanitizer.png?v=1602725888" /></a>
+        <a href="https://ppebuddytest.myshopify.com/products/50pc-disenfecting-wipe-pack"><img src="https://cdn.shopify.com/s/files/1/0443/9264/4760/files/Disinfecting_Wipe_ddeed26e-75c9-4545-8a6f-188e38183917.png?v=1602860351" alt=""></a>
+        <a href="https://ppebuddytest.myshopify.com/products/ppepack-plane-event"><img src="https://cdn.shopify.com/s/files/1/0443/9264/4760/files/PPE_Pack_1.png?v=1602860351" alt=""></a>
+      </div>
+      
+      <div class="container-6-copy mob_none">
+        <div class="motto-wrap">
+          <div data-w-id="2e5afe68-9fd6-a9ab-a935-ddff33febc6d" style="opacity:0" class="heading-jumbo-small">Featured Products</div>
+        </div>
+      </div>
+      <div class="container-6-copy small mob_none">
+        <div class="top-margin-2 large">
+          <div class="intro-content margin-auto">
+            <p data-w-id="2e5afe68-9fd6-a9ab-a935-ddff33febc8f" style="opacity:0">{{ 'index.P_120' | t }}</p>
+          </div>
+        </div>
+        <div data-w-id="2e5afe68-9fd6-a9ab-a935-ddff33febc94" style="opacity:0" class="card-kit-new">
+          <!-- <div class="image-thumbnail"><img width="175" src="{{ 'Icons-school.png' | asset_url }}" alt="" class="icon-kit">
+            <h3 class="kit-name">{{ 'index.H3_121' | t }}</h3>
+          </div>
+          <div class="kit-details"><img src="{{ 'School-kit.jpg' | asset_url }}" sizes="(max-width: 479px) 100vw, 120.46875px" srcset="{{ 'School-kit-p-500.jpeg' | asset_url }} 500w, {{ 'School-kit-p-800.jpeg' | asset_url }} 800w, {{ 'School-kit.jpg' | asset_url }} 1000w" alt="" class="kit-detail-image">
+            <h3 class="kit-detail-title">{{ 'index.H3_122' | t }}</h3>
+            <div class="lists tm-10">
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_123' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_124' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_125' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_126' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_127' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_128' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_129' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_130' | t }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-kit-layer"></div> -->
+         <a href="https://ppebuddytest.myshopify.com/products/1-pack-mask"> <img src="https://cdn.shopify.com/s/files/1/0443/9264/4760/files/1_pack_face_mask.png?v=1602725395" /> </a>
+        </div>
+        <div style="display:none;opacity:0" class="modal-wrapper">
+          <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="kit-detail">
+            <div class="div-block-303">
+              <div class="div-block-19"><img src="{{ 'Icons-school.png' | asset_url }}" width="175" alt="" class="image-45"></div>
+              <div class="div-block-19-copy">
+                <h4 class="modal-heading">{{ 'index.H4_131' | t }}</h4>
+                <p class="paragraph-small left _600px">{{ 'index.P_132' | t }}</p>
+              </div>
+            </div>
+            <div class="div-block-20">
+              <div class="columns-2 w-row">
+                <div class="no-padding rl-5 w-col w-col-5">
+                  <div class="div-block-22">
+                    <h4 class="what-s-in-the-kit-text mobile-center">{{ 'index.H4_133' | t }}</h4>
+                    <div class="lists tm-10">
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_134' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_135' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_136' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_137' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_138' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_139' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_140' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_141' | t }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-col w-col-7">
+                  <div class="div-block-38"><img src="{{ 'School-kit.jpg' | asset_url }}" width="500" sizes="100vw" alt="" srcset="{{ 'School-kit-p-500.jpeg' | asset_url }} 500w, {{ 'School-kit-p-800.jpeg' | asset_url }} 800w, {{ 'School-kit.jpg' | asset_url }} 1000w"></div>
+                </div>
+              </div>
+              <div class="div-block-21"><a href="/collections/main-collection" class="button-10 w-button">{{ 'index.A_142' | t }}</a></div>
+            </div><a data-w-id="2e5afe68-9fd6-a9ab-a935-ddff33febcde" href="#" class="close w-inline-block"><img src="{{ 'Icons-close.png' | asset_url }}" width="18" alt=""></a></div>
+          <div data-w-id="386bc9f8-7aef-1ad0-cd88-7bc39af8e832" class="close-modal-wrapper"></div>
+        </div>
+        <div data-w-id="233e5085-0179-75ff-a7ab-141abbfe9dc8" style="opacity:0" class="card-kit-new _2">
+          <!-- <div class="image-thumbnail _2"><img width="175" src="{{ 'Icons-Transportation.png' | asset_url }}" alt="" class="icon-kit">
+            <h3 class="kit-name">{{ 'index.H3_143' | t }}</h3>
+          </div>
+          <div class="kit-details"><img src="{{ 'Transportation-kit.jpg' | asset_url }}" sizes="(max-width: 479px) 100vw, 120px" srcset="{{ 'Transportation-kit-p-500.jpeg' | asset_url }} 500w, {{ 'Transportation-kit-p-800.jpeg' | asset_url }} 800w, {{ 'Transportation-kit.jpg' | asset_url }} 1000w" alt="" class="kit-detail-image">
+            <h3 class="kit-detail-title">{{ 'index.H3_144' | t }}</h3>
+            <div class="lists tm-10">
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_145' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_146' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_147' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_148' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_149' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_150' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_151' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_152' | t }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-kit-layer"></div> -->
+          <a href="https://ppebuddytest.myshopify.com/products/50-piece-3-ply-mask-box"><img src="https://cdn.shopify.com/s/files/1/0443/9264/4760/files/50_pcs_mask_box.png?v=1602725619" /></a>
+        </div>
+        <div data-w-id="f95b146b-d674-c4ea-c71a-d03b598f51e2" style="display:none;opacity:0" class="modal-wrapper-2">
+          <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="kit-detail-2">
+            <div class="div-block-303">
+              <div class="div-block-19"><img src="{{ 'Icons-Transportation.png' | asset_url }}" width="175" alt="" class="image-45"></div>
+              <div class="div-block-19-copy">
+                <h4 class="modal-heading">{{ 'index.H4_153' | t }}</h4>
+                <p class="paragraph-small left _600px">{{ 'index.P_154' | t }}<br>{{ 'index.P_155' | t }}</p>
+              </div>
+            </div>
+            <div class="div-block-20">
+              <div class="columns-2 w-row">
+                <div class="no-padding rl-5 w-col w-col-5">
+                  <div class="div-block-22">
+                    <h4 class="what-s-in-the-kit-text mobile-center">{{ 'index.H4_156' | t }}</h4>
+                    <div class="lists tm-10">
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_157' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_158' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_159' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_160' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_161' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_162' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_163' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_164' | t }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-col w-col-7">
+                  <div class="div-block-38"><img src="{{ 'Transportation-kit.jpg' | asset_url }}" width="500" sizes="100vw" alt="" srcset="{{ 'Transportation-kit-p-500.jpeg' | asset_url }} 500w, {{ 'Transportation-kit-p-800.jpeg' | asset_url }} 800w, {{ 'Transportation-kit.jpg' | asset_url }} 1000w"></div>
+                </div>
+              </div>
+              <div class="div-block-21"><a href="/collections/main-collection" class="button-10 w-button">{{ 'index.A_165' | t }}</a></div>
+            </div><a data-w-id="347c7010-67b9-89d1-3c7c-3d503333f7b1" href="#" class="close w-inline-block"><img src="{{ 'Icons-close.png' | asset_url }}" width="18" alt=""></a></div>
+          <div data-w-id="27087e2e-a9b4-4ca1-54fe-d5a1cbf8bdf2" class="close-modal-wrapper2"></div>
+        </div>
+        <div id="w-node-2f1069398a14-aecada18" data-w-id="f46290dc-31f2-ae3c-6f88-2f1069398a14" style="opacity:0" class="card-kit-new _3">
+          <!-- <div class="image-thumbnail _3"><img width="175" src="{{ 'Icons-retail.png' | asset_url }}" alt="" class="icon-kit">
+            <h3 class="kit-name">{{ 'index.H3_166' | t }}</h3>
+          </div>
+          <div class="kit-details"><img src="{{ 'Retail-kit.jpg' | asset_url }}" sizes="(max-width: 479px) 100vw, 120px" srcset="{{ 'Retail-kit-p-500.jpeg' | asset_url }} 500w, {{ 'Retail-kit.jpg' | asset_url }} 1000w" alt="" class="kit-detail-image">
+            <h3 class="kit-detail-title">{{ 'index.H3_167' | t }}</h3>
+            <div class="lists tm-10">
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_168' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_169' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_170' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_171' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_172' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_173' | t }}</div>
+              </div>
+              <div class="list _14px hide-opacity">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_174' | t }}</div>
+                </div>
+                <div>{{ 'index.DIV_175' | t }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-kit-layer"></div> -->
+          <a href="https://ppebuddytest.myshopify.com/products/50-piece-3-ply-mask-case"><img src="https://cdn.shopify.com/s/files/1/0443/9264/4760/files/50_pcs_Mask_Case.png?v=1602725768" /></a>
+        </div>
+        <div style="display:none;opacity:0" class="modal-wrapper-3">
+          <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="kit-detail-3">
+            <div class="div-block-303">
+              <div class="div-block-19"><img src="{{ 'Icons-retail.png' | asset_url }}" width="175" alt="" class="image-45"></div>
+              <div class="div-block-19-copy">
+                <h4 class="modal-heading">{{ 'index.H4_176' | t }}</h4>
+                <p class="paragraph-small left _600px">{{ 'index.P_177' | t }}<br>{{ 'index.P_178' | t }}</p>
+              </div>
+            </div>
+            <div class="div-block-20">
+              <div class="columns-2 w-row">
+                <div class="no-padding rl-5 w-col w-col-5">
+                  <div class="div-block-22">
+                    <h4 class="what-s-in-the-kit-text mobile-center">{{ 'index.H4_179' | t }}</h4>
+                    <div class="lists tm-10">
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_180' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_181' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_182' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_183' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_184' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_185' | t }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-col w-col-7">
+                  <div class="div-block-38"><img src="{{ 'Retail-kit.jpg' | asset_url }}" width="500" sizes="100vw" alt="" srcset="{{ 'Retail-kit-p-500.jpeg' | asset_url }} 500w, {{ 'Retail-kit.jpg' | asset_url }} 1000w"></div>
+                </div>
+              </div>
+              <div class="div-block-21"><a href="/collections/main-collection" class="button-10 w-button">{{ 'index.A_186' | t }}</a></div>
+            </div><a data-w-id="7626f98b-2c02-7cf1-debb-944d6a0492d4" href="#" class="close w-inline-block"><img src="{{ 'Icons-close.png' | asset_url }}" width="18" alt=""></a></div>
+          <div data-w-id="94781f6c-6d16-ed05-6590-0aceb925391c" class="close-modal-wrapper3"></div>
+        </div>
+        <div data-w-id="ae479207-bf2b-a52b-453e-ba9d6aa1bb97" style="opacity:0" class="card-kit-new _4">
+          <!-- <div class="image-thumbnail _4"><img width="175" src="{{ 'icon-hotel.png' | asset_url }}" alt="" class="icon-kit">
+            <h3 class="kit-name">{{ 'index.H3_187' | t }}</h3>
+          </div>
+          <div class="kit-details"><img src="{{ 'Hospital-kit.jpg' | asset_url }}" sizes="(max-width: 479px) 100vw, 120.109375px" srcset="{{ 'Hospital-kit-p-500.jpeg' | asset_url }} 500w, {{ 'Hospital-kit-p-800.jpeg' | asset_url }} 800w, {{ 'Hospital-kit.jpg' | asset_url }} 1000w" alt="" class="kit-detail-image">
+            <h3 class="kit-detail-title">{{ 'index.H3_188' | t }}</h3>
+            <div class="lists tm-10">
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_189' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_190' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_191' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_192' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_193' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_194' | t }}</div>
+              </div>
+              <div class="list _14px hide-opacity">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_195' | t }}</div>
+                </div>
+                <div>{{ 'index.DIV_196' | t }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-kit-layer"></div> -->
+          <a href="https://ppebuddytest.myshopify.com/products/hand-sanitizer-24-pack"><img src="https://cdn.shopify.com/s/files/1/0443/9264/4760/files/24_Pack_Sanitizer.png?v=1602725888" /></a>
+        </div>
+        <div style="display:none;opacity:0" class="modal-wrapper-4">
+          <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="kit-detail-4">
+            <div class="div-block-303">
+              <div class="div-block-19"><img src="{{ 'icon-hotel.png' | asset_url }}" width="175" alt="" class="image-45"></div>
+              <div class="div-block-19-copy">
+                <h4 class="modal-heading">{{ 'index.H4_197' | t }}</h4>
+                <p class="paragraph-small left _600px">{{ 'index.P_198' | t }}<br>{{ 'index.P_199' | t }}</p>
+              </div>
+            </div>
+            <div class="div-block-20">
+              <div class="columns-2 w-row">
+                <div class="no-padding rl-5 w-col w-col-5">
+                  <div class="div-block-22">
+                    <h4 class="what-s-in-the-kit-text mobile-center">{{ 'index.H4_200' | t }}</h4>
+                    <div class="lists tm-10">
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_201' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_202' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_203' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_204' | t }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-col w-col-7">
+                  <div class="div-block-38"><img src="{{ 'Hospital-kit.jpg' | asset_url }}" width="500" sizes="100vw" alt="" srcset="{{ 'Hospital-kit-p-500.jpeg' | asset_url }} 500w, {{ 'Hospital-kit-p-800.jpeg' | asset_url }} 800w, {{ 'Hospital-kit.jpg' | asset_url }} 1000w"></div>
+                </div>
+              </div>
+              <div class="div-block-21"><a href="/collections/main-collection" class="button-10 w-button">{{ 'index.A_205' | t }}</a></div>
+            </div><a data-w-id="c4dcd164-4e46-38f8-2b32-05a2db0ac9f7" href="#" class="close w-inline-block"><img src="{{ 'Icons-close.png' | asset_url }}" width="18" alt=""></a></div>
+          <div data-w-id="15460954-8032-ad06-f770-484e1a8f8f83" class="close-modal-wrapper4"></div>
+        </div>
+        <div data-w-id="106f48dc-1b24-e95b-d805-b8958769d392" style="opacity:0" class="card-kit-new _5">
+          <!-- <div class="image-thumbnail _5"><img width="175" src="{{ 'Icons-event.png' | asset_url }}" alt="" class="icon-kit">
+            <h3 class="kit-name">{{ 'index.H3_206' | t }}</h3>
+          </div>
+          <div class="kit-details"><img src="{{ 'Airline-Kit-and-events.jpg' | asset_url }}" sizes="(max-width: 479px) 100vw, 120px" srcset="{{ 'Airline-Kit-and-events-p-500.jpeg' | asset_url }} 500w, {{ 'Airline-Kit-and-events-p-800.jpeg' | asset_url }} 800w, {{ 'Airline-Kit-and-events.jpg' | asset_url }} 1000w" alt="" class="kit-detail-image">
+            <h3 class="kit-detail-title">{{ 'index.H3_207' | t }}</h3>
+            <div class="lists tm-10">
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_208' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_209' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_210' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_211' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_212' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_213' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_214' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_215' | t }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-kit-layer"></div> -->
+          <a href="https://ppebuddytest.myshopify.com/products/50pc-disenfecting-wipe-pack"><img src="https://cdn.shopify.com/s/files/1/0443/9264/4760/files/Disinfecting_Wipe_ddeed26e-75c9-4545-8a6f-188e38183917.png?v=1602860351" alt=""></a>
+        </div>
+        <div style="display:none;opacity:0" class="modal-wrapper-5">
+          <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="kit-detail-5">
+            <div class="div-block-303">
+              <div class="div-block-19"><img src="{{ 'Icons-event.png' | asset_url }}" width="175" alt="" class="image-45"></div>
+              <div class="div-block-19-copy">
+                <h4 class="modal-heading">{{ 'index.H4_216' | t }}</h4>
+                <p class="paragraph-small left _600px">{{ 'index.P_217' | t }}<br>{{ 'index.P_218' | t }}</p>
+              </div>
+            </div>
+            <div class="div-block-20">
+              <div class="columns-2 w-row">
+                <div class="no-padding rl-5 w-col w-col-5">
+                  <div class="div-block-22">
+                    <h4 class="what-s-in-the-kit-text mobile-center">{{ 'index.H4_219' | t }}</h4>
+                    <div class="lists tm-10">
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_220' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_221' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_222' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_223' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_224' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_225' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_226' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_227' | t }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-col w-col-7">
+                  <div class="div-block-38"><img src="{{ 'Airline-Kit-and-events.jpg' | asset_url }}" width="500" sizes="100vw" alt="" srcset="{{ 'Airline-Kit-and-events-p-500.jpeg' | asset_url }} 500w, {{ 'Airline-Kit-and-events-p-800.jpeg' | asset_url }} 800w, {{ 'Airline-Kit-and-events.jpg' | asset_url }} 1000w" class="image-70"></div>
+                </div>
+              </div>
+              <div class="div-block-21"><a href="/collections/main-collection" class="button-10 w-button">{{ 'index.A_228' | t }}</a></div>
+            </div><a data-w-id="ea53b6b5-5ec7-4f2e-1a1c-fb58272084d9" href="#" class="close w-inline-block"><img src="{{ 'Icons-close.png' | asset_url }}" width="18" alt=""></a></div>
+          <div data-w-id="319ba93c-06bb-5c0b-d2bf-00e15ad13adc" class="close-modal-wrapper5"></div>
+        </div>
+        <div data-w-id="4e2a9d10-4318-e339-f168-fab2058a188d" style="opacity:0" class="card-kit-new _6">
+          <!-- <div class="image-thumbnail _6"><img width="175" src="{{ 'Icons-airplane.png' | asset_url }}" alt="" class="icon-kit">
+            <h3 class="kit-name">{{ 'index.H3_229' | t }}</h3>
+          </div>
+          <div class="kit-details"><img src="{{ 'Airline-Kit-and-events.jpg' | asset_url }}" sizes="(max-width: 479px) 100vw, 120px" srcset="{{ 'Airline-Kit-and-events-p-500.jpeg' | asset_url }} 500w, {{ 'Airline-Kit-and-events-p-800.jpeg' | asset_url }} 800w, {{ 'Airline-Kit-and-events.jpg' | asset_url }} 1000w" alt="" class="kit-detail-image">
+            <h3 class="kit-detail-title">{{ 'index.H3_230' | t }}</h3>
+            <div class="lists tm-10">
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_231' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_232' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_233' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_234' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_235' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_236' | t }}</div>
+              </div>
+              <div class="list _14px">
+                <div class="div-block-15">
+                  <div class="blue-bold">{{ 'index.DIV_237' | t }}</div>
+                </div>
+                <div class="kit-list-text">{{ 'index.DIV_238' | t }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-kit-layer"></div> -->
+          <a href="https://ppebuddytest.myshopify.com/products/ppepack-plane-event"><img src="https://cdn.shopify.com/s/files/1/0443/9264/4760/files/PPE_Pack_1.png?v=1602860351" alt=""></a>
+        </div>
+        <div style="display:none;opacity:0" class="modal-wrapper-6">
+          <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="kit-detail-6">
+            <div class="div-block-303">
+              <div class="div-block-19"><img src="{{ 'Icons-airplane.png' | asset_url }}" width="175" alt="" class="image-45"></div>
+              <div class="div-block-19-copy">
+                <h4 class="modal-heading">{{ 'index.H4_239' | t }}</h4>
+                <p class="paragraph-small left _600px">{{ 'index.P_240' | t }}<br>{{ 'index.P_241' | t }}</p>
+              </div>
+            </div>
+            <div class="div-block-20">
+              <div class="columns-2 w-row">
+                <div class="no-padding rl-5 w-col w-col-5">
+                  <div class="div-block-22">
+                    <h4 class="what-s-in-the-kit-text mobile-center">{{ 'index.H4_242' | t }}</h4>
+                    <div class="lists tm-10">
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_243' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_244' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_245' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_246' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_247' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_248' | t }}</div>
+                      </div>
+                      <div class="list _14px">
+                        <div class="div-block-15">
+                          <div class="blue-bold">{{ 'index.DIV_249' | t }}</div>
+                        </div>
+                        <div>{{ 'index.DIV_250' | t }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-col w-col-7">
+                  <div class="div-block-38"><img src="{{ 'Airline-Kit-and-events.jpg' | asset_url }}" width="500" sizes="100vw" alt="" srcset="{{ 'Airline-Kit-and-events-p-500.jpeg' | asset_url }} 500w, {{ 'Airline-Kit-and-events-p-800.jpeg' | asset_url }} 800w, {{ 'Airline-Kit-and-events.jpg' | asset_url }} 1000w"></div>
+                </div>
+              </div>
+              <div class="div-block-21"><a href="/collections/main-collection" class="button-10 w-button">{{ 'index.A_251' | t }}</a></div>
+            </div><a data-w-id="e783afba-5f3c-b821-f978-ea7961322753" href="#" class="close w-inline-block"><img src="{{ 'Icons-close.png' | asset_url }}" width="18" alt=""></a></div>
+          <div data-w-id="209beb80-f07d-c3b9-1b29-bda04d149e9d" class="close-modal-wrapper6"></div>
+        </div>
+      </div>
+    </div>
+    <div id="Private-Label" data-w-id="a48327af-6155-70f6-b3ff-9fdd227576c3" class="section _100vh private-labeling">
+      <div class="container-main">
+        <div class="motto-wrap">
+          <div class="heading-jumbo-small white-text">{{ 'index.DIV_252' | t }}</div>
+          <div class="paragraph-bigger cc-bigger-white-light">{{ 'index.DIV_253' | t }}<br>{{ 'index.DIV_254' | t }}<br></div>
+          <a href="#CONTACT-US" class="text-button w-inline-block">
+            <div class="text-button-text">{{ 'index.DIV_255' | t }}</div>
+            <div class="underline"></div>
+          </a>
+        </div>
+      </div>
+      <div class="private-labeling"><img src="{{ 'sanitizer_3.png' | asset_url }}" alt="" class="image-44"><img src="{{ 'wipe_1.png' | asset_url }}" alt="" class="image-2"><img src="{{ 'kit_1.png' | asset_url }}" alt="" class="image-3"><img src="{{ 'sanitizer.png' | asset_url }}" alt="" class="image-4"><img src="{{ 'wipe_2.png' | asset_url }}" alt="" class="image-5"><img src="{{ 'kit.png' | asset_url }}" alt="" class="image-6"><img src="{{ 'kit_2.png' | asset_url }}" alt="" class="image-7"><img src="{{ 'sanitizer_1.png' | asset_url }}" alt="" class="image-43"><img src="{{ 'wipe.png' | asset_url }}" alt="" class="image-9"></div>
+    </div>
+    <div id="CONTACT-US" class="section _100vh protected-by-ppe">
+      <div class="container-main">
+        <div class="motto-wrap">
+          <div class="heading-jumbo-small white-text">{{ 'index.DIV_256' | t }}<br></div>
+        </div>
+        <div class="top-margin large">
+          <div class="intro-content margin-auto">
+            <div class="columns contact-us-ppe w-row">
+              <div class="no-padding rl-5 w-col w-col-6">
+                <a href="/collections/main-collection" data-w-id="1283c2e3-8a56-9805-6294-eb1cc5264e3b" target="_blank" class="curated-kit-button top w-inline-block">
+                  <div class="div-block-6"></div>
+                  <h4 class="contact-us-heading">{{ 'index.H4_257' | t }}</h4>
+                </a>
+              </div>
+              <div class="no-padding rl-5 w-col w-col-6">
+                <a href="/pages/customize-your-kit" data-w-id="1283c2e3-8a56-9805-6294-eb1cc5264e40" target="_blank" class="custom-kit-button w-inline-block">
+                  <div class="div-block-6 customize-thumbnail-image"></div>
+                  <h4 class="contact-us-heading">{{ 'index.H4_258' | t }}</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex tm-45 contact-us-copy">
+          <a href="mailto:sales@ppebuddy.com?subject=You've%20got%20new%20mail" class="button-white mobile-bp-6 w-inline-block">
+            <div class="message"></div>
+            <p class="no-padding">{{ 'index.P_259' | t }}</p>
+          </a>
+          <a href="tel:+12123016648" class="button-white mobile-bp-6 w-inline-block">
+            <div class="call"></div>
+            <p class="no-padding">{{ 'index.P_260' | t }}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="ABOUT-US" class="section tb-120">
+      <div class="container-main">
+        <div class="motto-wrap">
+          <div class="lottie-animation">
+            <div data-w-id="31ec6f57-5482-4c1d-da56-79d4a9cd51fe" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5f17188f75b594d19eec2665/5f17188f75b5945e96ec2717_lf30_editor_pZjqz6.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="3.5833333333333335" data-duration="3.5" id="firstLottie"></div>
+          </div>
+          <div data-w-id="31ec6f57-5482-4c1d-da56-79d4a9cd51ff" style="opacity:0" class="heading-jumbo-small">{{ 'index.DIV_261' | t }}</div>
+          <div data-w-id="31ec6f57-5482-4c1d-da56-79d4a9cd5201" style="opacity:0" class="paragraph-bigger cc-bigger-light"><strong class="blue-bold">{{ 'index.STRONG_262' | t }}</strong> <br>{{ 'index.DIV_263' | t }}<br>{{ 'index.DIV_264' | t }}<br><br><br></div>
+        </div>
+      </div>
+    </div>
+    <div class="section _100vh interactive">
+      <div class="container-main">
+        <div class="motto-wrap interactive">
+          <div class="heading-jumbo">{{ 'index.DIV_265' | t }}<br></div>
+        </div>
+      </div>
+      <div style="display:none;opacity:0" class="interactive-wrapper facemask"></div>
+      <div style="display:none;opacity:0" class="interactive-wrapper sanitizer"></div>
+      <div style="display:none;opacity:0" class="interactive-wrapper disinfect-wipe-png"></div>
+      <div class="interactive-wrapper default"></div>
+      <div class="div-block-36">
+        <a data-w-id="71fc62fe-4b8f-3625-4376-6a4869529e75" href="#" class="button-white mobile-bp-6 relative facemask-button w-inline-block">
+          <p class="no-padding">{{ 'index.P_266' | t }}</p>
+          <div style="-webkit-transform:translate3d(0, 20PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 20PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 20PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 20PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="heart-icon"></div>
+        </a>
+        <a data-w-id="71fc62fe-4b8f-3625-4376-6a4869529e79" href="#" class="button-white mobile-bp-6 relative handsanitizer-button w-inline-block">
+          <p class="no-padding">{{ 'index.P_267' | t }}</p>
+          <div style="-webkit-transform:translate3d(0, 20PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 20PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 20PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 20PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="heart-icon"></div>
+        </a> 
+        <a data-w-id="71fc62fe-4b8f-3625-4376-6a4869529e7d" href="#" class="button-white mobile-bp-6 relative disinfection-wipe-button w-inline-block">
+          <p class="no-padding">{{ 'index.P_268' | t }}</p>
+          <div style="-webkit-transform:translate3d(0, 20PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 20PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 20PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 20PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="heart-icon"></div>
+        </a>
+        <a href="#" class="button-white mobile-bp-6 relative gloves-button none w-inline-block">
+          <p class="no-padding">{{ 'index.P_269' | t }}</p>
+        </a>
+      </div>
+    </div>
+    
+    {% section 'footer' %}
+    
+
+  </div>
+  <div class="mobile-landscape-message">
+    <h1 class="heading-79">{{ 'index.H1_281' | t }}<br>{{ 'index.H1_282' | t }}</h1>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5f1873fee0c93a114d25e26b" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}{{ 'option_selection.js' | shopify_asset_url | script_tag }}

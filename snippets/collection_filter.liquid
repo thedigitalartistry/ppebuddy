@@ -1,0 +1,68 @@
+<div class="collection-filter">
+
+        <div class="grid_change">
+            <div class="icon-wrap" id="{{ id }}grid-four">
+                <img src="{{ 'grid_four_icon.png' | asset_url }}"/>
+            </div>
+            <div class="icon-wrap" id="{{ id }}grid-two">
+                <img src="{{ 'grid_two_icon.png' | asset_url }}"/>
+            </div>
+        </div>
+
+        {%- assign paginate_checker = paginate.current_page | times: settings.collection_products_limit -%}
+        {%- if paginate.items > paginate_checker -%}
+          {%- assign paginate_final = paginate_checker -%}
+        {%- else -%}
+          {%- assign paginate_final = paginate.items -%}
+        {%- endif -%}
+
+        <div class="collection-filter-wrap">
+          <div class="showing_result">
+            showing
+            {{ paginate.current_offset | plus: 1 }} - {{ paginate_final }} of
+            {{ paginate.items }} 
+            result
+          </div>
+
+        
+            <div class="filter-wrap">
+              <label for="{{ id }}">Sort by</label> 
+              <select class="select" id="{{ id }}">
+                <option value="manual">Featured</option>
+                <option value="price-ascending">Price: Low to High</option>
+                <option value="price-descending">Price: High to Low</option>
+                <option value="title-ascending">alphabetically, a-z</option>
+                <option value="title-descending">alphabetically, z-a</option>
+                <option value="created-ascending">Oldest to Newest</option>
+                <option value="created-descending">Newest to Oldest</option>
+                <option value="best-selling">Best Selling</option>
+              </select>
+            </div>
+
+        </div>
+          
+          <script>
+            Shopify.queryParams = {};
+            if (location.search.length) {
+              for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+                aKeyValue = aCouples[i].split('=');
+                if (aKeyValue.length > 1) {
+                  Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+                }
+              }
+            }
+            jQuery('#{{ id }}')
+              .val('{{ collection.sort_by | default: collection.default_sort_by | escape }}')
+              .bind('change', function() {
+                Shopify.queryParams.sort_by = jQuery(this).val();
+                location.search = jQuery.param(Shopify.queryParams).replace(/\+/g, '%20');
+              });
+
+              $("#{{ id }}grid-four").click(function(){
+                 $(".{{ id }}").removeClass("{{ id }}grid-two");
+              })
+              $("#{{ id }}grid-two").click(function(){
+                 $(".{{ id }}").addClass("{{ id }}grid-two");
+              })
+          </script>
+    </div>

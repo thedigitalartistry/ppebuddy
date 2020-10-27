@@ -1,0 +1,328 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "ppebuddytest",
+    "theme_author": "Vasav Prajapati",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https:\/\/www.yoursite.com",
+    "theme_support_email": "vasav@ppebuddy.com"
+  },
+  {
+    "name": "General Settings",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon Image",
+        "info": "Will be scaled down to 32x32px"
+      },
+      {
+        "type": "image_picker",
+        "id": "apple_touch_icon",
+        "label": "Apple touch icon image",
+        "info": "Will be scaled down to 120x120px"
+      }
+    ]
+  },
+  {
+    "name": "Product Page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_product_option_title",
+        "default": true,
+        "label": "Show option title"
+      },
+      {
+        "type": "range",
+        "id": "max_viewed_items_to_track",
+        "default": 12,
+        "min": 0,
+        "max": 50,
+        "label": "Max Viewed items to Track"
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social sharing image"
+      },
+      {
+        "type": "image_picker",
+        "id": "share_image",
+        "label": "Image",
+        "info": "Shown when sharing a link on special media."
+      },
+      {
+        "type": "header",
+        "content": "Sharing Links"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter Link"
+      }
+    ]
+  },
+  {
+    "name": "Notifications",
+    "settings": [
+      {
+        "type": "text",
+        "id": "notifications_add_to_cart",
+        "label": "Add to cart notification text",
+        "default": "Added to cart!"
+      },
+      {
+        "type": "text",
+        "id": "notifications_remove_from_cart",
+        "label": "Remove from cart notification text",
+        "default": "Removed from cart!"
+      }
+    ]
+  },
+  {
+    "name": "Recommended Products",
+    "settings": [
+      {
+        "type": "range",
+        "id": "recommended_products_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "label": "Recommended Products Limit",
+        "default": 4
+      }
+    ]
+  },
+  {
+    "name": "Pagination",
+    "settings": [
+      {
+        "type": "range",
+        "id": "blog_posts_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "label": "Articles per Page (Blog page)",
+        "default": 5
+      },
+      {
+        "type": "range",
+        "id": "collections_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "label": "Collections per page (Collection List page)",
+        "default": 6
+      },
+      {
+        "type": "range",
+        "id": "collection_products_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "label": "Products per Page (Collection page)",
+        "default": 6
+      },
+      {
+        "type": "range",
+        "id": "addresses_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "label": "Addresses per Page (Addresses page)",
+        "default": 6
+      },
+      {
+        "type": "range",
+        "id": "account_orders_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "label": "Orders Per Page (Account page)",
+        "default": 6
+      },
+      {
+        "type": "range",
+        "id": "search_results_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "label": "Search Results per Page (Search page)",
+        "default": 6
+      }
+    ]
+  },
+  {
+    "name": "recent products",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "recent_products_collection",
+        "label": "recent products collection"
+      },
+      {
+        "type": "range",
+        "id": "recent_products_collection_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 6,
+        "label": "recent products collection limit"
+      }
+    ]
+  },
+  {
+    "name": "face masks",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "face_masks_collection",
+        "label": "face masks collection"
+      },
+      {
+        "type": "range",
+        "id": "face_masks_collection_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 6,
+        "label": "face masks collection limit"
+      }
+    ]
+  },
+  {
+    "name": "hand gloves",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "hand_gloves_collection",
+        "label": "hand gloves collection"
+      },
+      {
+        "type": "range",
+        "id": "hand_gloves_collection_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 6,
+        "label": "hand gloves collection limit"
+      }
+    ]
+  },
+  {
+    "name": "hand sanitizer",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "hand_sanitizer_collection",
+        "label": "hand sanitizer collection"
+      },
+      {
+        "type": "range",
+        "id": "hand_sanitizer_collection_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 6,
+        "label": "hand sanitizer collection limit"
+      }
+    ]
+  },
+  {
+    "name": "disinfecting wipes",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "disinfecting_wipes_collection",
+        "label": "disinfecting wipes collection"
+      },
+      {
+        "type": "range",
+        "id": "disinfecting_wipes_collection_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 6,
+        "label": "disinfecting wipes collection limit"
+      }
+    ]
+  },
+  {
+    "name": "ppe kits",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "ppe_kits_collection",
+        "label": "ppe kits collection"
+      },
+      {
+        "type": "range",
+        "id": "ppe_kits_collection_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 6,
+        "label": "ppe kits collection limit"
+      }
+    ]
+  },
+  {
+    "name": "related posts",
+    "settings": [
+      {
+        "type": "blog",
+        "id": "related_posts_blog",
+        "label": "related posts blog"
+      },
+      {
+        "type": "range",
+        "id": "related_posts_blog_limit",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 6,
+        "label": "related posts number of articles"
+      },
+      {
+        "type": "select",
+        "id": "related_posts_blog_sort",
+        "label": "related posts order",
+        "options": [
+          {
+            "value": "published_at",
+            "label": "Date"
+          },
+          {
+            "value": "title",
+            "label": "Title"
+          }
+        ],
+        "default": "published_at"
+      },
+      {
+        "type": "checkbox",
+        "id": "related_posts_blog_reverse",
+        "label": "Reverse Order?",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "related_posts_blog_enable_filter",
+        "label": "Filter By Tag?",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "related_posts_blog_tag",
+        "label": "Tag to filter",
+        "default": "Tag",
+        "placeholder": "Tag"
+      }
+    ]
+  }
+]

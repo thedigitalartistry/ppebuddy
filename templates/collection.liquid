@@ -1,0 +1,562 @@
+{% layout 'collection' %}
+
+  
+  {% include 'case_counter' %}   
+  {% section 'header' %}
+
+  {% include 'mobile_menu_btn' %}
+    
+  {% include 'mobile_navigation' %}
+
+  {% section 'collection' %}
+
+  <div class="preloader"><img src="{{ 'logo_blue-1.png' | asset_url }}" width="200" alt="" class="logo-preloader">
+    <div data-w-id="bce50fe6-f179-2dd3-283e-6c552986c2d6" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5e3a95568c461017d7e7a30b/5e3be132807b8721620cf527_lf30_editor_n6xHam.json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="2.9696361820138772" data-duration="" class="lottie-animation-2"></div>
+  </div>
+  <div style="display:none" class="main">
+
+ 
+   {% comment %}
+    <div data-collapse="medium" data-animation="default" data-duration="400" data-no-scroll="1" role="banner" class="navbar w-nav">
+      <a href="/" class="brand-2 w-nav-brand"><img src="{{ 'PPE-Buddy_logos_logo_blue.svg' | asset_url }}" alt=""></a>
+      <div class="nav-wrapper">
+        <div data-hover="1" data-delay="0" class="w-dropdown">
+          <div class="dropdown-toggle-2 w-dropdown-toggle">
+            <div class="icon-dropdown w-icon-dropdown-toggle"></div>
+            <div class="shop-text">{{ 'collection.DIV_36' | t }}</div>
+          </div>
+          <nav class="dropdown-list-3 w-dropdown-list">
+            <div class="links-container">{% for link in linklists['shop-menu-1'].links %}<a href="{{ link.url }}" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c02847f" class="shop-links w-dropdown-link">{{ link.title }}</a>{% endfor %}<a href="/collections/face-masks" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028481" class="shop-links w-dropdown-link">{{ 'collection.A_37' | t }}</a><a href="/collections/gloves" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028483" class="shop-links w-dropdown-link">{{ 'collection.A_38' | t }}</a><a href="/collections/sanitizers" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028485" class="shop-links w-dropdown-link">{{ 'collection.A_39' | t }}</a><a href="/collections/disinfecting-wipes" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028487" class="shop-links w-dropdown-link">{{ 'collection.A_40' | t }}</a><a href="/collections/kits" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028489" class="shop-links w-dropdown-link">{{ 'collection.A_41' | t }}</a></div>
+            <div class="image-container"><img src="{{ 'wipe-product.png' | asset_url }}" alt="" class="disinfecting-wipe-image"><img src="{{ 'products-banner-1.png' | asset_url }}" alt="" class="image-allproducts"><img src="{{ 'mask-product.png' | asset_url }}" width="204" alt="" class="face-mask-image"><img src="{{ 'sanitizer-product.png' | asset_url }}" width="204" alt="" class="sanitizer-image"><img src="{{ 'gloves-product.png' | asset_url }}" width="208" alt="" class="gloves-image"><img src="{{ 'ppekit-product.png' | asset_url }}" width="508" alt="" class="all-products-image"></div>
+            <div class="content-container">
+              <div class="content-container-all-products">
+                <div class="content-container-text">{{ 'collection.DIV_42' | t }}<br>{{ 'collection.DIV_43' | t }}</div>
+                <a href="#" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028498" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div class="text-block-129">{{ 'collection.DIV_44' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-face-masks">
+                <div class="content-container-text">{{ 'collection.DIV_45' | t }}</div>
+                <a href="#" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c02849e" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div>{{ 'collection.DIV_46' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-gloves">
+                <div class="content-container-text">{{ 'collection.DIV_47' | t }}</div>
+                <a href="#" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c0284a4" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div>{{ 'collection.DIV_48' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-sanitizers">
+                <div class="content-container-text">{{ 'collection.DIV_49' | t }}<br>{{ 'collection.DIV_50' | t }}</div>
+                <a href="#" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c0284ac" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div>{{ 'collection.DIV_51' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-wipes">
+                <div class="content-container-text">{{ 'collection.DIV_52' | t }}</div>
+                <a href="#" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c0284b2" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div>{{ 'collection.DIV_53' | t }}</div>
+                </a>
+              </div>
+              <div class="content-container-ppe-kits">
+                <div class="content-container-text">{{ 'collection.DIV_54' | t }}<br>{{ 'collection.DIV_55' | t }}</div>
+                <a href="#" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c0284ba" class="menu-content-button cc-jumbo-button blue-to-white w-inline-block">
+                  <div class="text-block-129">{{ 'collection.DIV_56' | t }}</div>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <nav role="navigation" class="main-menu w-nav-menu"><a href="#" class="megamenu-link w-nav-link">{{ 'collection.A_57' | t }}</a><a href="#" class="megamenu-link w-nav-link">{{ 'collection.A_58' | t }}</a></nav>
+        <div class="w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div>
+        <form action="/search" post-type="product" class="search-products-main w-form" method="get" role="search"><input type="search" class="search-input-main w-input" maxlength="256" name="q" placeholder="Search a product…" id="search" required="" value="{{ search.terms | escape }}"><input type="submit" value="Search" class="main-button search-box-main w-button">
+          <div class="div-block-339"></div>
+        </form>
+        <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightSidebar" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart-2"><a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink cart-button-2 w-inline-block"><img src="{{ 'shopping-cart-1.png' | asset_url }}" loading="lazy" width="20" alt=""><svg class="w-commerce-commercecartopenlinkicon icon-16" width="17px" height="17px" viewBox="0 0 17 17"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M2.60592789,2 L0,2 L0,0 L4.39407211,0 L4.84288393,4 L16,4 L16,9.93844589 L3.76940945,12.3694378 L2.60592789,2 Z M15.5,17 C14.6715729,17 14,16.3284271 14,15.5 C14,14.6715729 14.6715729,14 15.5,14 C16.3284271,14 17,14.6715729 17,15.5 C17,16.3284271 16.3284271,17 15.5,17 Z M5.5,17 C4.67157288,17 4,16.3284271 4,15.5 C4,14.6715729 4.67157288,14 5.5,14 C6.32842712,14 7,14.6715729 7,15.5 C7,16.3284271 6.32842712,17 5.5,17 Z" fill="currentColor" fill-rule="nonzero"></path></g></svg><div class="text-block-128 w-inline-block">{{ 'collection.DIV_59' | t }}</div><div class="w-commerce-commercecartopenlinkcount cart-quantity-4" udy-el="cart-count">{{ cart.item_count }}</div></a>
+          <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightSidebar">
+            <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer">
+              <div class="w-commerce-commercecartheader">
+                <h4 class="w-commerce-commercecartheading heading-81">{{ 'collection.H4_60' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink w-inline-block"><svg width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg></a></div>
+              <div class="w-commerce-commercecartformwrapper">
+                <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform default-state-4 {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                  
+                  <ul role="list" class="mini-cart-list" udy-el="items-list">
+                    {% for item in cart.items %}<li class="cart-item-2">
+                      <div class="mini-cart-row">
+                        <div class="variations-main-wrapper">
+                          <div class="mini-cart-featured-image" style="background-image: url({{ item | img_url: 'large' }})"></div>
+                          <div class="minicart-info">
+                            <div class="text-block-38">{{ item.product.title }}</div>
+                            <div class="text-block-39">{{ item.price | money }}</div><a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="link-9" udy-el="remove-item">{{ 'collection.A_61' | t }}</a></div>
+                        </div>
+                        <div class="cart-quantity-3">{{ item.quantity }}</div>
+                      </div>
+                    </li>{% endfor %}
+                  </ul>
+                  <div class="w-commerce-commercecartfooter {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                    <div class="w-commerce-commercecartlineitem">
+                      <div>{{ 'collection.DIV_62' | t }}</div>
+                      <div class="w-commerce-commercecartordervalue" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                    </div>
+                    <div>
+                      <div data-node-type="commerce-cart-quick-checkout-actions" class="web-payments-3">
+                        <a data-node-type="commerce-cart-apple-pay-button" style="background-image:-webkit-named-image(apple-pay-logo-white);background-size:100% 50%;background-position:50% 50%;background-repeat:no-repeat" class="w-commerce-commercecartapplepaybutton">
+                          <div></div>
+                        </a><a data-node-type="commerce-cart-quick-checkout-button" style="display:none" class="w-commerce-commercecartquickcheckoutbutton"><svg class="w-commerce-commercequickcheckoutgoogleicon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><defs><polygon id="google-mark-a" points="0 .329 3.494 .329 3.494 7.649 0 7.649"></polygon><polygon id="google-mark-c" points=".894 0 13.169 0 13.169 6.443 .894 6.443"></polygon></defs><g fill="none" fill-rule="evenodd"><path fill="#4285F4" d="M10.5967,12.0469 L10.5967,14.0649 L13.1167,14.0649 C14.6047,12.6759 15.4577,10.6209 15.4577,8.1779 C15.4577,7.6339 15.4137,7.0889 15.3257,6.5559 L7.8887,6.5559 L7.8887,9.6329 L12.1507,9.6329 C11.9767,10.6119 11.4147,11.4899 10.5967,12.0469"></path><path fill="#34A853" d="M7.8887,16 C10.0137,16 11.8107,15.289 13.1147,14.067 C13.1147,14.066 13.1157,14.065 13.1167,14.064 L10.5967,12.047 C10.5877,12.053 10.5807,12.061 10.5727,12.067 C9.8607,12.556 8.9507,12.833 7.8887,12.833 C5.8577,12.833 4.1387,11.457 3.4937,9.605 L0.8747,9.605 L0.8747,11.648 C2.2197,14.319 4.9287,16 7.8887,16"></path><g transform="translate(0 4)"><mask id="google-mark-b" fill="#fff"><use xlink:href="#google-mark-a"></use></mask><path fill="#FBBC04" d="M3.4639,5.5337 C3.1369,4.5477 3.1359,3.4727 3.4609,2.4757 L3.4639,2.4777 C3.4679,2.4657 3.4749,2.4547 3.4789,2.4427 L3.4939,0.3287 L0.8939,0.3287 C0.8799,0.3577 0.8599,0.3827 0.8459,0.4117 C-0.2821,2.6667 -0.2821,5.3337 0.8459,7.5887 L0.8459,7.5997 C0.8549,7.6167 0.8659,7.6317 0.8749,7.6487 L3.4939,5.6057 C3.4849,5.5807 3.4729,5.5587 3.4639,5.5337" mask="url(#google-mark-b)"></path></g><mask id="google-mark-d" fill="#fff"><use xlink:href="#google-mark-c"></use></mask><path fill="#EA4335" d="M0.894,4.3291 L3.478,6.4431 C4.113,4.5611 5.843,3.1671 7.889,3.1671 C9.018,3.1451 10.102,3.5781 10.912,4.3671 L13.169,2.0781 C11.733,0.7231 9.85,-0.0219 7.889,0.0001 C4.941,0.0001 2.245,1.6791 0.894,4.3291" mask="url(#google-mark-d)"></path></g></svg><svg class="w-commerce-commercequickcheckoutmicrosofticon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><polygon fill="#F05022" points="7 7 1 7 1 1 7 1"></polygon><polygon fill="#7DB902" points="15 7 9 7 9 1 15 1"></polygon><polygon fill="#00A4EE" points="7 15 1 15 1 9 7 9"></polygon><polygon fill="#FFB700" points="15 15 9 15 9 9 15 9"></polygon></g></svg><div>{{ 'collection.DIV_63' | t }}</div></a></div><a href="/checkout" value="Continue to Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton continue-to-checkout-button" data-loading-text="Hang Tight...">{{ 'collection.A_64' | t }}</a></div>
+                  </div>
+                </form>
+                <div class="w-commerce-commercecartemptystate empty-state-cart {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart"><img src="{{ 'empty-cart-icon-1.png' | asset_url }}" width="130" alt="" class="image-50">
+                  <div class="empty-cart-text">{{ 'collection.DIV_65' | t }}</div>
+                  <div class="empty-cart-text2">{{ 'collection.DIV_66' | t }}<br>{{ 'collection.DIV_67' | t }}</div>
+                  <a href="#PPE-KIT" data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c02850d" class="empty-cart-button cc-jumbo-button cc-jumbo-blue z-7 w-inline-block">
+                    <div class="text-block-131">{{ 'collection.DIV_68' | t }}</div>
+                  </a>
+                </div>
+                <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate">
+                  <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="The order minimum was not met. Add more items to your cart to continue.">{{ 'collection.DIV_69' | t }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="cart-item-2" data-item-id="${item.id}">
+                      <div class="mini-cart-row">
+                        <div class="variations-main-wrapper">
+                          <div class="mini-cart-featured-image" style="background-image: url(${item.image})"></div>
+                          <div class="minicart-info">
+                            <div class="text-block-38">${item.title}</div>
+                            <div class="text-block-39">${item.price}</div><a href="${item.remove}" class="link-9" udy-el="remove-item">remove</a></div>
+                        </div>
+                        <div class="cart-quantity-3">${item.quantity}</div>
+                      </div>
+                    </li>`
+          }
+          </script></div>
+      </div>
+      <div class="account-button">
+        <div data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028513" class="account-details"><img src="{{ 'user-2.png' | asset_url }}" width="75" alt="" class="account-icon">{% if customer %}<a href="/account" class="link-block-12 w-inline-block"></a>{% endif %}</div>{% unless customer %}<a data-w-id="b32deb1b-c0d9-2e0a-86b3-94018c028516" href="/account/login" class="sign-in-button w-button">{{ 'collection.A_70' | t }}</a>{% endunless %}</div>
+    </div>
+    <div data-collapse="medium" data-animation="default" data-duration="400" data-no-scroll="1" role="banner" class="navbar1 active-nav1 white w-nav">
+      <div class="nav1-wrap"><a href="/" id="w-node-03b6fa256c9c-fa256c9a" class="brand w-nav-brand"><img src="{{ 'PPE-Buddy_logos_logo_blue.svg' | asset_url }}" alt="" class="image"></a>
+        <div id="w-node-03b6fa256c9e-fa256c9a" class="nav1-menu-wrap">
+          <nav role="navigation" class="megamenu w-nav-menu">{% for link in linklists['menu'].links %}{% unless link.links != blank %}<a href="{{ link.url }}" class="nav-link-2 w-nav-link">{{ link.title }}</a>{% endunless %}
+            {% if link.links != blank %}<div data-hover="" data-delay="0" class="w-dropdown">
+              <div class="w-dropdown-toggle">
+                <div class="icon-15 w-icon-dropdown-toggle"></div>
+                <div class="text-block-125" data-href="{{ link.url }}">{{ link.title }}</div>
+              </div>
+              <nav class="dropdown-list w-dropdown-list">{% for child_link in link.links %}<a href="{{ child_link.url }}" class="dropdown-link w-dropdown-link">{{ child_link.title }}</a>{% endfor %}</nav>
+            </div>{% endif %}
+          {% endfor %}</nav>{% unless customer %}<a href="#" class="main-button w-button">{{ 'collection.A_71' | t }}</a>{% endunless %}{% if customer %}<a href="/account" class="main-button w-button">{{ 'collection.A_72' | t }}</a>{% endif %}
+          <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightSidebar" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart"><a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink cart-button w-inline-block"><img src="{{ '5ea444450e34982891325943_bag.svg' | asset_url }}" width="20" alt=""><div class="w-commerce-commercecartopenlinkcount cart-quantity" udy-el="cart-count">{{ cart.item_count }}</div></a>
+            <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightSidebar cart-wrap">
+              <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer cart-container">
+                <div class="w-commerce-commercecartheader cart-header"><img src="{{ '5ec6a8dcd2e207163b348b75_foodo.svg' | asset_url }}" width="83" alt="">
+                  <h4 class="w-commerce-commercecartheading cart-heading">{{ 'collection.H4_73' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink close-button w-inline-block"><img src="{{ 'CloseCart2x_1CloseCart2x.png' | asset_url }}" width="11" alt="" class="cart-close-icon"></a></div>
+                <div class="w-commerce-commercecartformwrapper">
+                  <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform default-state-2 {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                    
+                    
+                    <ul role="list" class="mini-cart-list" udy-el="items-list">
+                      {% for item in cart.items %}<li class="cart-item-2">
+                        <div class="mini-cart-row">
+                          <div class="variations-main-wrapper">
+                            <div class="mini-cart-featured-image" style="background-image: url({{ item | img_url: 'large' }})"></div>
+                            <div class="minicart-info">
+                              <div class="text-block-38">{{ item.product.title }}</div>
+                              <div class="text-block-39">{{ item.price | money }}</div><a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="link-9" udy-el="remove-item">{{ 'collection.A_74' | t }}</a></div>
+                          </div>
+                          <div class="cart-quantity-3">{{ item.quantity }}</div>
+                        </div>
+                      </li>{% endfor %}
+                    </ul>
+                    <div class="w-commerce-commercecartfooter cart-footer {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                      <div class="w-commerce-commercecartlineitem cart-line-item">
+                        <div class="size5-text">{{ 'collection.DIV_75' | t }}</div>
+                        <div class="w-commerce-commercecartordervalue size6-text" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                      </div>
+                      <div>
+                        <div data-node-type="commerce-cart-quick-checkout-actions" class="web-payments-2">
+                          <a data-node-type="commerce-cart-apple-pay-button" style="background-image:-webkit-named-image(apple-pay-logo-white);background-size:100% 50%;background-position:50% 50%;background-repeat:no-repeat" class="w-commerce-commercecartapplepaybutton web-payment-button">
+                            <div></div>
+                          </a><a data-node-type="commerce-cart-quick-checkout-button" style="display:none" class="w-commerce-commercecartquickcheckoutbutton"><svg class="w-commerce-commercequickcheckoutgoogleicon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><defs><polygon id="google-mark-a" points="0 .329 3.494 .329 3.494 7.649 0 7.649"></polygon><polygon id="google-mark-c" points=".894 0 13.169 0 13.169 6.443 .894 6.443"></polygon></defs><g fill="none" fill-rule="evenodd"><path fill="#4285F4" d="M10.5967,12.0469 L10.5967,14.0649 L13.1167,14.0649 C14.6047,12.6759 15.4577,10.6209 15.4577,8.1779 C15.4577,7.6339 15.4137,7.0889 15.3257,6.5559 L7.8887,6.5559 L7.8887,9.6329 L12.1507,9.6329 C11.9767,10.6119 11.4147,11.4899 10.5967,12.0469"></path><path fill="#34A853" d="M7.8887,16 C10.0137,16 11.8107,15.289 13.1147,14.067 C13.1147,14.066 13.1157,14.065 13.1167,14.064 L10.5967,12.047 C10.5877,12.053 10.5807,12.061 10.5727,12.067 C9.8607,12.556 8.9507,12.833 7.8887,12.833 C5.8577,12.833 4.1387,11.457 3.4937,9.605 L0.8747,9.605 L0.8747,11.648 C2.2197,14.319 4.9287,16 7.8887,16"></path><g transform="translate(0 4)"><mask id="google-mark-b" fill="#fff"><use xlink:href="#google-mark-a"></use></mask><path fill="#FBBC04" d="M3.4639,5.5337 C3.1369,4.5477 3.1359,3.4727 3.4609,2.4757 L3.4639,2.4777 C3.4679,2.4657 3.4749,2.4547 3.4789,2.4427 L3.4939,0.3287 L0.8939,0.3287 C0.8799,0.3577 0.8599,0.3827 0.8459,0.4117 C-0.2821,2.6667 -0.2821,5.3337 0.8459,7.5887 L0.8459,7.5997 C0.8549,7.6167 0.8659,7.6317 0.8749,7.6487 L3.4939,5.6057 C3.4849,5.5807 3.4729,5.5587 3.4639,5.5337" mask="url(#google-mark-b)"></path></g><mask id="google-mark-d" fill="#fff"><use xlink:href="#google-mark-c"></use></mask><path fill="#EA4335" d="M0.894,4.3291 L3.478,6.4431 C4.113,4.5611 5.843,3.1671 7.889,3.1671 C9.018,3.1451 10.102,3.5781 10.912,4.3671 L13.169,2.0781 C11.733,0.7231 9.85,-0.0219 7.889,0.0001 C4.941,0.0001 2.245,1.6791 0.894,4.3291" mask="url(#google-mark-d)"></path></g></svg><svg class="w-commerce-commercequickcheckoutmicrosofticon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><polygon fill="#F05022" points="7 7 1 7 1 1 7 1"></polygon><polygon fill="#7DB902" points="15 7 9 7 9 1 15 1"></polygon><polygon fill="#00A4EE" points="7 15 1 15 1 9 7 9"></polygon><polygon fill="#FFB700" points="15 15 9 15 9 9 15 9"></polygon></g></svg><div>{{ 'collection.DIV_76' | t }}</div></a></div>
+                        <div style="position:relative" data-wf-paypal-button="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;color&quot;:&quot;black&quot;,&quot;shape&quot;:&quot;rect&quot;,&quot;label&quot;:&quot;paypal&quot;,&quot;tagline&quot;:false}" class="paypal">
+                          <div style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;z-index:999;cursor:auto"></div>
+                        </div><a href="/checkout" value="Continue to Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton main-button" data-loading-text="Hang Tight...">{{ 'collection.A_77' | t }}</a></div>
+                    </div>
+                  </form>
+                  <div class="w-commerce-commercecartemptystate empty-state dark-cart-empty-state {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart">
+                    <div>{{ 'collection.DIV_78' | t }}</div>
+                  </div>
+                  <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate error-message">
+                    <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="Cart failed.">{{ 'collection.DIV_79' | t }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="cart-item-2" data-item-id="${item.id}">
+                        <div class="mini-cart-row">
+                          <div class="variations-main-wrapper">
+                            <div class="mini-cart-featured-image" style="background-image: url(${item.image})"></div>
+                            <div class="minicart-info">
+                              <div class="text-block-38">${item.title}</div>
+                              <div class="text-block-39">${item.price}</div><a href="${item.remove}" class="link-9" udy-el="remove-item">remove</a></div>
+                          </div>
+                          <div class="cart-quantity-3">${item.quantity}</div>
+                        </div>
+                      </li>`
+          }
+          </script></div>
+          <div class="menu-button w-nav-button"><img src="{{ 'menu-black.svg' | asset_url }}" width="15" alt="" class="menu-icon"></div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div class="category-hero">
+      <div class="div-block-303-copy">
+        <h1 class="category-name">{{ collection.title }}</h1>
+      </div>
+      <form action="/search" post-type="product" class="search-products w-form" method="get" role="search"><input type="search" class="search-input w-input" maxlength="256" name="q" placeholder="Search a product…" id="search" required="" value="{{ search.terms | escape }}"><input type="submit" value="Search" class="main-button search-box w-button"></form>
+      <div data-animation="slide" data-duration="500" data-infinite="1" data-w-id="0087d0be-6d2e-02d0-8b7a-ee3449bcb0b4" class="product-slider w-slider">
+        <div class="w-slider-mask">
+          <div class="slide-4 w-slide"></div>
+          <div class="w-slide"></div>
+        </div>
+        <div class="w-slider-arrow-left">
+          <div class="w-icon-slider-left"></div>
+        </div>
+        <div data-w-id="0087d0be-6d2e-02d0-8b7a-ee3449bcb0ba" class="w-slider-arrow-right">
+          <div class="w-icon-slider-right"></div>
+        </div>
+        <div class="w-slider-nav w-round"></div>
+      </div>
+      <div data-animation="slide" data-duration="500" data-infinite="1" data-w-id="eb799b79-c5a6-84f0-d93c-8ef0f650eb93" class="product-slider2 w-slider">
+        <div class="w-slider-mask">
+          <div class="slide-5 w-slide"></div>
+          <div class="w-slide"></div>
+        </div>
+        <div class="w-slider-arrow-left">
+          <div class="w-icon-slider-left"></div>
+        </div>
+        <div data-w-id="eb799b79-c5a6-84f0-d93c-8ef0f650eb99" class="w-slider-arrow-right">
+          <div class="w-icon-slider-right"></div>
+        </div>
+        <div class="w-slider-nav w-round"></div>
+      </div>
+      <div class="all-products-slider">
+        <div class="all-products-slider-mask">
+          <div class="slide1">
+            <div class="slider-content-container">
+              <div class="slide-left-content">
+                <div class="text-block-141">{{ 'collection.DIV_105' | t }}</div>
+                <h1 class="heading-82">{{ 'collection.H1_106' | t }}</h1>
+                <p class="slide-paragraph">{{ 'collection.P_107' | t }}<br>{{ 'collection.P_108' | t }}</p>
+              </div>
+              <div class="slide-right-content"><img src="{{ 'Ellipse-1.png' | asset_url }}" loading="lazy" width="460" sizes="(max-width: 479px) 92vw, (max-width: 767px) 45vw, (max-width: 991px) 300px, 350px" alt="" srcset="{{ 'Ellipse-1-p-500.png' | asset_url }} 500w, {{ 'Ellipse-1-p-800.png' | asset_url }} 800w, {{ 'Ellipse-1.png' | asset_url }} 920w" class="image-68"><img src="{{ 'products-banner-1.png' | asset_url }}" loading="lazy" alt="" class="image-67 allproducts"></div>
+            </div>
+          </div>
+          <div id="facemask" class="slide2">
+            <div class="slider-content-container">
+              <div class="slide-left-content">
+                <div class="text-block-141">{{ 'collection.DIV_109' | t }}</div>
+                <h1 class="heading-82">{{ 'collection.H1_110' | t }}<br>{{ 'collection.H1_111' | t }}</h1>
+                <p class="slide-paragraph">{{ 'collection.P_112' | t }}</p>
+              </div>
+              <div class="slide-right-content"><img src="{{ 'Ellipse-1.png' | asset_url }}" loading="lazy" width="460" sizes="(max-width: 479px) 92vw, (max-width: 767px) 51vw, (max-width: 991px) 300px, 350px" alt="" srcset="{{ 'Ellipse-1-p-500.png' | asset_url }} 500w, {{ 'Ellipse-1-p-800.png' | asset_url }} 800w, {{ 'Ellipse-1.png' | asset_url }} 920w" class="image-68"><img src="{{ 'mask-product.png' | asset_url }}" loading="lazy" alt="" class="image-67"></div>
+            </div>
+          </div>
+          <div id="handgloves" class="slide3">
+            <div class="slider-content-container">
+              <div class="slide-left-content">
+                <div class="text-block-141">{{ 'collection.DIV_113' | t }}</div>
+                <h1 class="heading-82">{{ 'collection.H1_114' | t }}<br>{{ 'collection.H1_115' | t }}<br>{{ 'collection.H1_116' | t }}</h1>
+                <p class="slide-paragraph">{{ 'collection.P_117' | t }}<br>{{ 'collection.P_118' | t }}<br>{{ 'collection.P_119' | t }}<br>{{ 'collection.P_120' | t }}<br>{{ 'collection.P_121' | t }}<br>{{ 'collection.P_122' | t }}<br></p>
+              </div>
+              <div class="slide-right-content"><img src="{{ 'Ellipse-1.png' | asset_url }}" loading="lazy" width="460" sizes="(max-width: 479px) 92vw, (max-width: 767px) 50vw, (max-width: 991px) 300px, 350px" alt="" srcset="{{ 'Ellipse-1-p-500.png' | asset_url }} 500w, {{ 'Ellipse-1-p-800.png' | asset_url }} 800w, {{ 'Ellipse-1.png' | asset_url }} 920w" class="image-68"><img src="{{ 'gloves-product.png' | asset_url }}" loading="lazy" width="640" alt="" class="image-67 _3"></div>
+            </div>
+          </div>
+          <div id="handgloves" class="slide4">
+            <div class="slider-content-container">
+              <div class="slide-left-content">
+                <div class="text-block-141">{{ 'collection.DIV_123' | t }}</div>
+                <h1 class="heading-82">{{ 'collection.H1_124' | t }}<br>{{ 'collection.H1_125' | t }}<br>{{ 'collection.H1_126' | t }}</h1>
+                <p class="slide-paragraph">{{ 'collection.P_127' | t }}<br>{{ 'collection.P_128' | t }}<br>{{ 'collection.P_129' | t }}<br>{{ 'collection.P_130' | t }}</p>
+              </div>
+              <div class="slide-right-content"><img src="{{ 'Ellipse-1.png' | asset_url }}" loading="lazy" width="460" sizes="(max-width: 479px) 92vw, (max-width: 767px) 50vw, (max-width: 991px) 300px, 350px" alt="" srcset="{{ 'Ellipse-1-p-500.png' | asset_url }} 500w, {{ 'Ellipse-1-p-800.png' | asset_url }} 800w, {{ 'Ellipse-1.png' | asset_url }} 920w" class="image-68"><img src="{{ 'sanitizer-product.png' | asset_url }}" loading="lazy" width="640" alt="" class="image-67 _3"></div>
+            </div>
+          </div>
+          <div id="handgloves" class="slide5">
+            <div class="slider-content-container">
+              <div class="slide-left-content">
+                <div class="text-block-141">{{ 'collection.DIV_131' | t }}</div>
+                <h1 class="heading-82">{{ 'collection.H1_132' | t }}<br>{{ 'collection.H1_133' | t }}<br>{{ 'collection.H1_134' | t }}</h1>
+                <p class="slide-paragraph">{{ 'collection.P_135' | t }}<br>{{ 'collection.P_136' | t }}<br>{{ 'collection.P_137' | t }}</p>
+              </div>
+              <div class="slide-right-content"><img src="{{ 'Ellipse-1.png' | asset_url }}" loading="lazy" width="460" sizes="(max-width: 479px) 92vw, (max-width: 767px) 52vw, (max-width: 991px) 300px, 350px" alt="" srcset="{{ 'Ellipse-1-p-500.png' | asset_url }} 500w, {{ 'Ellipse-1-p-800.png' | asset_url }} 800w, {{ 'Ellipse-1.png' | asset_url }} 920w" class="image-68"><img src="{{ 'wipe-product.png' | asset_url }}" loading="lazy" width="640" alt="" class="image-67 _3"></div>
+            </div>
+          </div>
+          <div id="handgloves" class="slide6">
+            <div class="slider-content-container">
+              <div class="slide-left-content">
+                <div class="text-block-141">{{ 'collection.DIV_138' | t }}</div>
+                <h1 class="heading-82">Featured<br>Products</h1>
+                <p class="slide-paragraph">{{ 'collection.P_141' | t }}<br>{{ 'collection.P_142' | t }}</p>
+              </div>
+              <div class="slide-right-content"><img src="{{ 'Ellipse-1.png' | asset_url }}" loading="lazy" width="460" sizes="(max-width: 479px) 92vw, (max-width: 767px) 57vw, (max-width: 991px) 300px, 350px" alt="" srcset="{{ 'Ellipse-1-p-500.png' | asset_url }} 500w, {{ 'Ellipse-1-p-800.png' | asset_url }} 800w, {{ 'Ellipse-1.png' | asset_url }} 920w" class="image-68"><img src="{{ 'ppekit-product.png' | asset_url }}" loading="lazy" width="640" alt="" class="image-67 _3"></div>
+            </div>
+          </div>
+        </div>
+        <div class="div-block-341">
+          <div class="dots-and-text-container">
+            <div class="button-container">
+              <div class="previous-slide">
+                <div data-w-id="55f4bec7-9b41-aa16-493a-b8cba9347124" class="p-reverse-kits"></div>
+                <div data-w-id="12db20cd-e401-e638-57f1-09bb4fd56d0f" class="p-all"></div>
+                <div data-w-id="832e6a85-909f-3ca0-4c5d-21c3a063e7c6" class="p-masks"></div>
+                <div data-w-id="901bc6b0-dc72-423f-c9d6-7f24a6602781" class="p-gloves"></div>
+                <div data-w-id="596b3b98-8f14-27a3-b057-939958e2e0e9" class="p-sanitizer"></div>
+                <div data-w-id="1c4b1489-5c09-6beb-3496-26a583bc3346" class="p-wipes"></div>
+              </div>
+              <div class="next-slide">
+                <div data-w-id="b249509b-53a3-0ce3-6125-9bc30f05d65f" class="n-masks"></div>
+                <div data-w-id="deeadbc1-d154-48ff-6de1-60ac2fe2e234" class="n-gloves"></div>
+                <div data-w-id="d83d27bb-7294-8622-f4c4-cf8f40479940" class="n-sanitizer"></div>
+                <div data-w-id="5d4c34bc-9c1a-c3aa-e8b8-04c4713c676f" class="n-wipes"></div>
+                <div data-w-id="163abfa4-14d7-2e28-2563-af6edd4df91a" class="n-kits"></div>
+                <div data-w-id="c5e17615-286d-39ee-a463-f178c3541d12" class="n-all"></div>
+              </div>
+            </div>
+            <div class="slider-text-container">
+              <div class="tofacemask-text">{{ 'collection.DIV_143' | t }}</div>
+              <div class="togloves-text">{{ 'collection.DIV_144' | t }}</div>
+              <div class="tosanitizer-text">{{ 'collection.DIV_145' | t }}</div>
+              <div class="towipes-text">{{ 'collection.DIV_146' | t }}</div>
+              <div class="tokits-text">{{ 'collection.DIV_147' | t }}</div>
+              <div class="toall-text">{{ 'collection.DIV_148' | t }}</div>
+            </div>
+            <div class="slider-dots-container">
+              <div data-w-id="de789058-5bad-edc3-750c-389ed4854cc8" class="dot _1"></div>
+              <div data-w-id="156903fa-9646-a925-faa5-12bb7597d395" class="dot _2"></div>
+              <div class="dot _3"></div>
+              <div class="dot _4"></div>
+              <div class="dot _5"></div>
+              <div class="dot _6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-20" id="section-20">
+      <div class="div-block-311"></div>
+      {% paginate collection.products by settings.collection_products_limit %}
+        <div data-w-id="defb88d1-b297-4b39-b50a-d91faa622c25" class="collection-list-wrapper-2 w-dyn-list">
+          
+        {% include 'collection_filter' id: "collection_1" %}
+      
+        <div role="list" class="collection-list-2 w-dyn-items collection_1">
+          {% for product in collection.products %}
+            <div role="listitem" class="w-dyn-item">
+              <div class="collection-item__card-product">
+              
+                {% include 'collection_product_image_cart' %}
+
+                {% include 'collection_product_content' %}
+
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if collection.products == empty %}
+          <div class="empty-state-7 w-dyn-empty">
+            <div class="product-not-available-container">
+              <img src="{{ 'empty.png' | asset_url }}" loading="lazy" width="130" alt="" class="image-71">
+              <div class="text-block-151">{{ 'collection.DIV_154' | t }}</div>
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="w-pagination-wrapper pagination-3">
+          {% if paginate.previous.is_link %}
+              <a href="{{ paginate.previous.url }}" class="w-pagination-previous previous">
+                <div class="text-block-143 w-inline-block">{{ 'collection.DIV_155' | t }}</div>
+                <img src="{{ 'arrow-left.png' | asset_url }}" loading="lazy" width="14.5" alt="">
+              </a>
+            {% endif %}
+          {% if paginate.next.is_link %}<a href="{{ paginate.next.url }}" class="w-pagination-next next">
+            <div class="text-block-142 w-inline-block">{{ 'collection.DIV_156' | t }}</div><img src="{{ 'arrow-right.png' | asset_url }}" loading="lazy" width="14.5" alt=""></a>{% endif %}
+        </div>
+
+        
+      </div>
+      {% endpaginate %}
+      <div data-w-id="a64ccb0d-6ece-2f0f-fb19-02c71a727d07" class="face-masks-wrapper w-dyn-list">
+       {% paginate collections[settings.face_masks_collection].products by settings.face_masks_collection_limit %}
+
+       {% include 'collection_filter' id: "collection_2" %}
+
+        <div role="list" class="collection-list-2 w-dyn-items collection_2">
+          {% for product in collections[settings.face_masks_collection].products limit: settings.face_masks_collection_limit %}
+            <div role="listitem" class="w-dyn-item">
+              <div class="collection-item__card-product">
+              
+                {% include 'collection_product_image_cart' %}
+
+                {% include 'collection_product_content' %}
+
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        {% unless settings.face_masks_collection != blank and collections[settings.face_masks_collection].products_count != 0 %}
+          <div class="empty-state-8 w-dyn-empty">
+            <div class="product-not-available-container">
+              <img src="{{ 'empty.png' | asset_url }}" loading="lazy" width="130" alt="" class="image-71">
+              <div class="text-block-151">{{ 'collection.DIV_160' | t }}</div>
+            </div>
+          </div>
+        {% endunless %}
+        {% endpaginate %}
+      </div>
+      <div class="hand-gloves-wrapper w-dyn-list">
+        {% paginate collections[settings.hand_gloves_collection].products by settings.hand_gloves_collection_limit %}
+
+        {% include 'collection_filter' id: "collection_3" %}
+        <div role="list" class="collection-list-2 w-dyn-items collection_3">
+          {% for product in collections[settings.hand_gloves_collection].products limit: settings.hand_gloves_collection_limit %}
+          
+            <div role="listitem" class="w-dyn-item">
+              <div class="collection-item__card-product">
+              
+                {% include 'collection_product_image_cart' %}
+
+                {% include 'collection_product_content' %}
+
+              </div>
+            </div>
+          
+          {% endfor %}
+        </div>
+        {% unless settings.hand_gloves_collection != blank and collections[settings.hand_gloves_collection].products_count != 0 %}<div class="empty-state-9 w-dyn-empty">
+          <div class="product-not-available-container"><img src="{{ 'empty.png' | asset_url }}" loading="lazy" width="130" alt="" class="image-71">
+            <div class="text-block-151">{{ 'collection.DIV_164' | t }}</div>
+          </div>
+        </div>{% endunless %}
+        {% endpaginate %}
+      </div>
+      <div class="hand-sanitizer-wrapper w-dyn-list">
+        {% paginate collections[settings.hand_sanitizer_collection].products by settings.hand_sanitizer_collection_limit %}
+
+          {% include 'collection_filter' id: "collection_4" %}
+
+        <div role="list" class="collection-list-2 w-dyn-items collection_4">
+          {% for product in collections[settings.hand_sanitizer_collection].products limit: settings.hand_sanitizer_collection_limit %}
+          
+            <div role="listitem" class="w-dyn-item">
+              <div class="collection-item__card-product">
+              
+                {% include 'collection_product_image_cart' %}
+
+                {% include 'collection_product_content' %}
+
+              </div>
+            </div>
+          
+          {% endfor %}
+        </div>
+        {% unless settings.hand_sanitizer_collection != blank and collections[settings.hand_sanitizer_collection].products_count != 0 %}<div class="empty-state-10 w-dyn-empty">
+          <div class="product-not-available-container"><img src="{{ 'empty.png' | asset_url }}" loading="lazy" width="130" alt="" class="image-71">
+            <div class="text-block-151">{{ 'collection.DIV_168' | t }}</div>
+          </div>
+        </div>{% endunless %}
+        {% endpaginate %}
+      </div>
+      <div class="disinfecting-wipe-wrapper w-dyn-list">
+          {% paginate collections[settings.disinfecting_wipes_collection].products by settings.disinfecting_wipes_collection_limit %}
+
+          {% include 'collection_filter' id: "collection_5" %}
+
+        <div role="list" class="collection-list-2 w-dyn-items collection_5">
+          {% for product in collections[settings.disinfecting_wipes_collection].products limit: settings.disinfecting_wipes_collection_limit %}
+          
+          <div role="listitem" class="w-dyn-item">
+              <div class="collection-item__card-product">
+              
+                {% include 'collection_product_image_cart' %}
+
+                {% include 'collection_product_content' %}
+
+              </div>
+            </div>
+          
+          {% endfor %}
+
+        </div>
+        {% unless settings.disinfecting_wipes_collection != blank and collections[settings.disinfecting_wipes_collection].products_count != 0 %}<div class="empty-state-11 w-dyn-empty">
+          <div class="product-not-available-container"><img src="{{ 'empty.png' | asset_url }}" loading="lazy" width="130" alt="" class="image-71">
+            <div class="text-block-151">{{ 'collection.DIV_172' | t }}</div>
+          </div>
+        </div>{% endunless %}
+        {% endpaginate %}
+      </div>
+      <div class="ppebuddy-kits-wrapper w-dyn-list">
+        {% paginate collections[settings.ppe_kits_collection].products by settings.ppe_kits_collection_limit %}
+
+        {% include 'collection_filter' id: "collection_6" %}
+
+        <div role="list" class="collection-list-2 w-dyn-items collection_6">
+          {% for product in collections[settings.ppe_kits_collection].products limit: settings.ppe_kits_collection_limit %}
+            <div role="listitem" class="w-dyn-item">
+              <div class="collection-item__card-product">
+              
+                {% include 'collection_product_image_cart' %}
+
+                {% include 'collection_product_content' %}
+
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        {% unless settings.ppe_kits_collection != blank and collections[settings.ppe_kits_collection].products_count != 0 %}<div class="empty-state-12 w-dyn-empty">
+          <div class="product-not-available-container"><img src="{{ 'empty.png' | asset_url }}" loading="lazy" width="130" alt="" class="image-71">
+            <div class="text-block-151">{{ 'collection.DIV_176' | t }}</div>
+          </div>
+        </div>{% endunless %}
+        {% endpaginate %}
+      </div>
+    </div>
+    {% endcomment %}
+    
+    {% section 'footer' %}
+
+  </div>
+  <div class="mobile-landscape-message">
+    <h1 class="heading-79">{{ 'collection.H1_188' | t }}<br>{{ 'collection.H1_189' | t }}</h1>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5f1873fee0c93a114d25e26b" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  CUSTOM QUANTITY BUTTONS  -->
+  <script>
+$('.q-plus').click(function() {
+  var $input = $(this).parents('.quantity-container-categories').find('.quantity-field-categories');
+  var val = parseInt($input.val(), 10);
+  $input.val(val + 1);
+});
+$('.q-minus').click(function() {
+  var $input = $(this).parents('.quantity-container-categories').find('.quantity-field-categories');
+  var val = parseInt($input.val(), 10);
+  $input.val(Math.max(val - 1, 1));
+})
+</script>
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}{{ 'option_selection.js' | shopify_asset_url | script_tag }}

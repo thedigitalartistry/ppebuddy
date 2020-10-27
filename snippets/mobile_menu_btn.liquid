@@ -1,0 +1,107 @@
+<div data-collapse="medium" data-animation="over-left" data-duration="400" role="banner" class="mobile-nav w-nav">
+    <a href="#" class="none w-nav-brand"></a>
+    <nav role="navigation" class="nav-menu w-nav-menu">
+        <div class="floating-nav-wrapper mobile">
+            <div class="logo-container-mobile">
+                <img src="{{ 'PPE-Buddy_logos_logo_blue.svg' | asset_url }}" alt="" class="image-48">
+                <a href="/" aria-current="page" class="link-to-hompage w-inline-block w--current"></a>
+            </div>
+            <form action="/search" post-type="product" class="search-products-mobile w-form" method="get" role="search">
+                <input type="search" class="search-input-mobile w-input" maxlength="256" name="q" placeholder="Search a product…" id="search" required="" value="{{ search.terms | escape }}">
+                <input type="submit" value="Search" class="main-button-mobile search-box-main w-button">
+                <div class="search-icon-black"></div>
+            </form>
+            <div data-hover="" data-delay="0" class="dropdown w-dropdown">
+                <div class="nav-link-mobile black drop-down-menu white w-dropdown-toggle">
+                    <div class="w-icon-dropdown-toggle"></div>
+                    <div class="text-block-132">{{ 'index.DIV_71' | t }}</div>
+                </div>
+                <nav class="dropdown-list-2 w-dropdown-list">
+                    <a href="#" class="nav-link-3 black drop-down-menu sub-menu white w-dropdown-link">
+                        {{ 'index.A_72' | t }}
+                    </a>
+                    <a href="#" class="nav-link-3 black drop-down-menu sub-menu white w-dropdown-link">
+                        {{ 'index.A_73' | t }}
+                    </a>
+                    <a href="#" class="nav-link-3 black drop-down-menu sub-menu white w-dropdown-link">
+                        {{ 'index.A_74' | t }}
+                    </a>
+                    <a href="#" class="nav-link-3 black drop-down-menu sub-menu white w-dropdown-link">
+                        {{ 'index.A_75' | t }}
+                    </a>
+                    <a href="#" class="nav-link-3 black drop-down-menu sub-menu white w-dropdown-link">
+                        {{ 'index.A_76' | t }}
+                    </a>
+                    <a href="#" class="nav-link-3 black drop-down-menu sub-menu white w-dropdown-link">
+                        {{ 'index.A_77' | t }}
+                    </a>
+                </nav>
+            </div>
+            <div class="links-container-mobile">
+
+                <div id="mobile-shop-btn" class="nav-link-mobile mobile">{{ 'index.A_78' | t }} 
+                    <span class="plus-btn show">+</span>
+                    <span class="minus-btn">-</span>
+                </div>
+                <ul id="mobile-nested-menu">
+                    <li>
+                        <a href="/collections/main-collection" class="nav-link-mobile mobile">All Products</a>
+                    </li>
+                    <li>
+                        <a href="/collections/face-masks" class="nav-link-mobile mobile">Face Masks</a>
+                    </li>
+                    <li>
+                        <a href="/collections/gloves" class="nav-link-mobile mobile">Gloves</a>
+                    </li>
+                    <li>
+                        <a href="/collections/sanitizers" class="nav-link-mobile mobile">Sanitizers</a>
+                    </li>
+                    <li>
+                        <a href="/collections/disinfecting-wipes" class="nav-link-mobile mobile">Disinfecting Wipes</a>
+                    </li>
+                    <li>
+                        <a href="/collections/kits" class="nav-link-mobile mobile">PPE Kits</a>
+                    </li>
+                </ul> 
+
+                <a href="{{ routes.root_url }}#KIT-COMPARISON" class="nav-link-mobile mobile">{{ 'index.A_79' | t }}</a>
+                <a href="{{ routes.root_url }}#Private-Label" class="nav-link-mobile mobile">{{ 'index.A_80' | t }}</a>
+                <a href="/pages/faq" class="nav-link-mobile mobile">{{ 'index.A_81' | t }}</a>
+                {% if customer %}
+                    <a href="/account" class="nav-link-mobile mobile">{{ 'index.A_82' | t }}</a>
+                {% endif %}
+                {% unless customer %}
+                    <a href="/account/login" class="nav-link-mobile mobile">{{ 'index.A_83' | t }}</a>
+                {% endunless %}
+            </div>
+        </div>
+    </nav>
+    <div data-w-id="861815c9-cb3a-e997-4fb3-114e242f012b" class="menu-button-2 w-nav-button">
+        <div class="icon w-icon-nav-menu"></div>
+        <div 
+        data-w-id="861815c9-cb3a-e997-4fb3-114e242f012d" 
+        data-animation-type="lottie" 
+        data-src="{{ 'lottieflow-menu-nav-08-ffffff-easey.json' | asset_url }}" 
+        data-loop="0" 
+        data-direction="1" 
+        data-autoplay="0" 
+        data-is-ix2-target="1" 
+        data-renderer="svg" 
+        data-default-duration="2.0208333333333335" 
+        data-duration="" class="lottie-animation-3">
+        </div>
+    </div>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+<script>
+   $("#mobile-shop-btn").click(function(e){
+       e.preventDefault();
+       $("#mobile-nested-menu").slideToggle();
+       $(".minus-btn").toggleClass("show");
+       $(".plus-btn").toggleClass("show");
+   })
+</script>

@@ -1,0 +1,106 @@
+
+{% if collection.image %}
+    <div class="collection-banner-wrapper" style="background-image: url({{ collection.image | img_url: 'master' }})">
+        <div class="collection-banner-container">
+            <div class="collection-banner-content">
+
+               {% if collection.handle == 'main-collection' %}
+                    <div class="slide-left-content">
+                        <div class="text-block-141">ALL PRODUCTS</div>
+                        <h1 class="heading-82">Always Stay<br> Protected!</h1>
+                        <p class="slide-paragraph">Grab N' Go PPE Kits to keep you <br> safe and protected.</p>
+                    </div>
+               {% endif %}
+               {% if collection.handle == 'face-masks' %}
+                    <div class="slide-left-content">
+                        <div class="text-block-141">{{ 'collection.DIV_109' | t }}</div>
+                        <h1 class="heading-82">{{ 'collection.H1_110' | t }}<br>{{ 'collection.H1_111' | t }}</h1>
+                        <p class="slide-paragraph">{{ 'collection.P_112' | t }}</p>
+                    </div>
+               {% endif %}
+               {% if collection.handle == 'gloves' %}
+                    <div class="slide-left-content">
+                        <div class="text-block-141">{{ 'collection.DIV_113' | t }}</div>
+                        <h1 class="heading-82">{{ 'collection.H1_114' | t }}<br>{{ 'collection.H1_115' | t }}<br>{{ 'collection.H1_116' | t }}</h1>
+                        <p class="slide-paragraph">{{ 'collection.P_117' | t }}<br>{{ 'collection.P_118' | t }}<br>{{ 'collection.P_119' | t }}<br>{{ 'collection.P_120' | t }}<br>{{ 'collection.P_121' | t }}<br>{{ 'collection.P_122' | t }}<br></p>
+                    </div>
+               {% endif %}
+               {% if collection.handle == 'sanitizers' %}
+                    <div class="slide-left-content">
+                        <div class="text-block-141">{{ 'collection.DIV_123' | t }}</div>
+                        <h1 class="heading-82">{{ 'collection.H1_124' | t }}<br>{{ 'collection.H1_125' | t }}<br>{{ 'collection.H1_126' | t }}</h1>
+                        <p class="slide-paragraph">{{ 'collection.P_127' | t }}<br>{{ 'collection.P_128' | t }}<br>{{ 'collection.P_129' | t }}<br>{{ 'collection.P_130' | t }}</p>
+                    </div>
+               {% endif %}
+               {% if collection.handle == 'disinfecting-wipes' %}
+                    <div class="slide-left-content">
+                        <div class="text-block-141">{{ 'collection.DIV_131' | t }}</div>
+                        <h1 class="heading-82">{{ 'collection.H1_132' | t }}<br>{{ 'collection.H1_133' | t }}<br>{{ 'collection.H1_134' | t }}</h1>
+                        <p class="slide-paragraph">{{ 'collection.P_135' | t }}<br>{{ 'collection.P_136' | t }}<br>{{ 'collection.P_137' | t }}</p>
+                    </div>
+               {% endif %}
+               {% if collection.handle == 'kits' %}
+                    <div class="slide-left-content">
+                        <div class="text-block-141">{{ 'collection.DIV_138' | t }}</div>
+                        <h1 class="heading-82">Explore <br> Our Kits</h1>
+                        <p class="slide-paragraph">{{ 'collection.P_141' | t }}<br>{{ 'collection.P_142' | t }}</p>
+                    </div>
+               {% endif %}
+               
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+<div class="collection-section">
+    {% paginate collection.products by settings.collection_products_limit %}
+        <div data-w-id="defb88d1-b297-4b39-b50a-d91faa622c25" class="collection-list-wrapper-2 w-dyn-list">
+            
+            {% include 'collection_filter' id: "collection_1" %}
+        
+            <div role="list" class="collection-list-2 w-dyn-items collection_1">
+                {% for product in collection.products %}
+                    <div role="listitem" class="w-dyn-item">
+                        <div class="collection-item__card-product">
+                        
+                            {% include 'collection_product_image_cart' %}
+
+                            {% include 'collection_product_content' %}
+
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% if collection.products == empty %}
+            <div class="empty-state-7 w-dyn-empty">
+                <div class="product-not-available-container">
+                    <img src="{{ 'empty.png' | asset_url }}" loading="lazy" width="130" alt="" class="image-71">
+                    <div class="text-block-151">
+                        {{ 'collection.DIV_154' | t }}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% comment %} <div class="w-pagination-wrapper pagination-3">
+                {% if paginate.previous.is_link %}
+                    <a href="{{ paginate.previous.url }}" class="w-pagination-previous previous">
+                        <div class="text-block-143 w-inline-block">{{ 'collection.DIV_155' | t }}</div>
+                        <img src="{{ 'arrow-left.png' | asset_url }}" loading="lazy" width="14.5" alt="">
+                    </a>
+                {% endif %}
+                {% if paginate.next.is_link %}
+                    <a href="{{ paginate.next.url }}" class="w-pagination-next next">
+                        <div class="text-block-142 w-inline-block">{{ 'collection.DIV_156' | t }}</div>
+                        <img src="{{ 'arrow-right.png' | asset_url }}" loading="lazy" width="14.5" alt="">
+                    </a>
+                {% endif %}
+            </div> {% endcomment %}
+
+           {% include 'pagination' %} 
+            
+        </div>
+    {% endpaginate %}
+
+</div>

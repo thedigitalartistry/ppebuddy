@@ -1,0 +1,9 @@
+<a href="{{ product.url | within: collection.url }}" class="card-product_wrapper-image w-inline-block">
+    <img alt="{{ product.featured_image.alt }}" src="{{ product.featured_image.src | img_url: 'large' }}" class="wrapper-image__img">
+    {% if product.compare_at_price > product.price %}
+        {% include 'sale_badge' %}
+    {% endif %}
+    {% if product.available == false %}
+        {% include 'coming_soon_badge' %}
+    {% endif %}
+</a>

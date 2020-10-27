@@ -1,0 +1,15 @@
+<div class="card-blog__wrapper-text">
+
+    <div class="wrapper-text__line-2"></div>
+    <h1 class="wrapper--text__title">{{ product.title }}</h1>
+    <div class="link__text-2 blog">
+        {% if product.price_varies %}
+            {{ product.price_min | money }} - {{ product.price_max | money }}
+        {% else %}
+            {{ product.price | money }}
+        {% endif %}
+    </div>
+    
+    {% include 'collection_add_to_cart_btn' %}
+
+</div>

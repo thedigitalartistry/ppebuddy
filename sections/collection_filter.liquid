@@ -1,0 +1,49 @@
+<div class="collection-filter">
+
+        {%- assign paginate_checker = paginate.current_page | times: settings.collection_products_limit -%}
+        {%- if paginate.items > paginate_checker -%}
+          {%- assign paginate_final = paginate_checker -%}
+        {%- else -%}
+          {%- assign paginate_final = paginate.items -%}
+        {%- endif -%}
+
+        <div class="showing_result">
+           showing 
+          {{ paginate.current_offset | plus: 1 }} - {{ paginate_final }} of
+          {{ paginate.items }} 
+          result
+        </div>
+
+      
+          <div>
+            <label for="{{ id }}">Sort by</label> 
+            <select id="{{ id }}">
+              <option value="manual">Featured</option>
+              <option value="price-ascending">Price: Low to High</option>
+              <option value="price-descending">Price: High to Low</option>
+              <option value="title-ascending">A-Z</option>
+              <option value="title-descending">Z-A</option>
+              <option value="created-ascending">Oldest to Newest</option>
+              <option value="created-descending">Newest to Oldest</option>
+              <option value="best-selling">Best Selling</option>
+            </select>
+          </div>
+          
+          <script>
+          Shopify.queryParams = {};
+          if (location.search.length) {
+            for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+              aKeyValue = aCouples[i].split('=');
+              if (aKeyValue.length > 1) {
+                Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+              }
+            }
+          }
+          jQuery('#{{ id }}')
+            .val('{{ collection.sort_by | default: collection.default_sort_by | escape }}')
+            .bind('change', function() {
+              Shopify.queryParams.sort_by = jQuery(this).val();
+              location.search = jQuery.param(Shopify.queryParams).replace(/\+/g, '%20');
+            });
+          </script>
+    </div>

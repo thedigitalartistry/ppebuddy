@@ -1,0 +1,171 @@
+{% layout 'customers_login' %}
+      
+  <div class="preloader"><img src="{{ 'logo_blue-1.png' | asset_url }}" width="200" alt="" class="logo-preloader">
+    <div data-w-id="bce50fe6-f179-2dd3-283e-6c552986c2d6" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5e3a95568c461017d7e7a30b/5e3be132807b8721620cf527_lf30_editor_n6xHam.json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="2.9696361820138772" data-duration="" class="lottie-animation-2"></div>
+  </div>
+  <div style="display:none" class="main">
+    <div data-collapse="medium" data-animation="default" data-duration="400" data-no-scroll="1" role="banner" class="navbar1 active-nav1 white w-nav">
+      <div class="nav1-wrap"><a href="/" id="w-node-03b6fa256c9c-fa256c9a" class="brand w-nav-brand"><img src="{{ 'PPE-Buddy_logos_logo_blue.svg' | asset_url }}" alt="" class="image"></a>
+        <div id="w-node-03b6fa256c9e-fa256c9a" class="nav1-menu-wrap">
+          <nav role="navigation" class="megamenu w-nav-menu">{% for link in linklists['menu'].links %}{% unless link.links != blank %}<a href="{{ link.url }}" class="nav-link-2 w-nav-link">{{ link.title }}</a>{% endunless %}
+            {% if link.links != blank %}<div data-hover="" data-delay="0" class="w-dropdown">
+              <div class="w-dropdown-toggle">
+                <div class="icon-15 w-icon-dropdown-toggle"></div>
+                <div class="text-block-125" data-href="{{ link.url }}">{{ link.title }}</div>
+              </div>
+              <nav class="dropdown-list w-dropdown-list">{% for child_link in link.links %}<a href="{{ child_link.url }}" class="dropdown-link w-dropdown-link">{{ child_link.title }}</a>{% endfor %}</nav>
+            </div>{% endif %}
+          {% endfor %}</nav>{% unless customer %}<a href="#" class="main-button w-button">{{ 'customers_login.A_0' | t }}</a>{% endunless %}{% if customer %}<a href="/account" class="main-button w-button">{{ 'customers_login.A_1' | t }}</a>{% endif %}
+          <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightSidebar" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart"><a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink cart-button w-inline-block"><img src="{{ '5ea444450e34982891325943_bag.svg' | asset_url }}" width="20" alt=""><div class="w-commerce-commercecartopenlinkcount cart-quantity" udy-el="cart-count">{{ cart.item_count }}</div></a>
+            <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightSidebar cart-wrap">
+              <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer cart-container">
+                <div class="w-commerce-commercecartheader cart-header"><img src="{{ '5ec6a8dcd2e207163b348b75_foodo.svg' | asset_url }}" width="83" alt="">
+                  <h4 class="w-commerce-commercecartheading cart-heading">{{ 'customers_login.H4_2' | t }}</h4><a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink close-button w-inline-block"><img src="{{ 'CloseCart2x_1CloseCart2x.png' | asset_url }}" width="11" alt="" class="cart-close-icon"></a></div>
+                <div class="w-commerce-commercecartformwrapper">
+                  <form data-node-type="commerce-cart-form" class="w-commerce-commercecartform default-state-2 {% if cart.item_count == 0 %}udesly-display-none{% endif %}">
+                    
+                    
+                    <ul role="list" class="mini-cart-list" udy-el="items-list">
+                      {% for item in cart.items %}<li class="cart-item-2">
+                        <div class="mini-cart-row">
+                          <div class="variations-main-wrapper">
+                            <div class="mini-cart-featured-image" style="background-image: url({{ item | img_url: 'large' }})"></div>
+                            <div class="minicart-info">
+                              <div class="text-block-38">{{ item.product.title }}</div>
+                              <div class="text-block-39">{{ item.price | money }}</div><a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="link-9" udy-el="remove-item">{{ 'customers_login.A_3' | t }}</a></div>
+                          </div>
+                          <div class="cart-quantity-3">{{ item.quantity }}</div>
+                        </div>
+                      </li>{% endfor %}
+                    </ul>
+                    <div class="w-commerce-commercecartfooter cart-footer {% if cart.item_count == 0 %}udesly-display-none{% endif %}" udy-el="cart-actions">
+                      <div class="w-commerce-commercecartlineitem cart-line-item">
+                        <div class="size5-text">{{ 'customers_login.DIV_4' | t }}</div>
+                        <div class="w-commerce-commercecartordervalue size6-text" udy-el="cart-total">{{ cart.total_price | money }}</div>
+                      </div>
+                      <div>
+                        <div data-node-type="commerce-cart-quick-checkout-actions" class="web-payments-2">
+                          <a data-node-type="commerce-cart-apple-pay-button" style="background-image:-webkit-named-image(apple-pay-logo-white);background-size:100% 50%;background-position:50% 50%;background-repeat:no-repeat" class="w-commerce-commercecartapplepaybutton web-payment-button">
+                            <div></div>
+                          </a><a data-node-type="commerce-cart-quick-checkout-button" style="display:none" class="w-commerce-commercecartquickcheckoutbutton"><svg class="w-commerce-commercequickcheckoutgoogleicon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><defs><polygon id="google-mark-a" points="0 .329 3.494 .329 3.494 7.649 0 7.649"></polygon><polygon id="google-mark-c" points=".894 0 13.169 0 13.169 6.443 .894 6.443"></polygon></defs><g fill="none" fill-rule="evenodd"><path fill="#4285F4" d="M10.5967,12.0469 L10.5967,14.0649 L13.1167,14.0649 C14.6047,12.6759 15.4577,10.6209 15.4577,8.1779 C15.4577,7.6339 15.4137,7.0889 15.3257,6.5559 L7.8887,6.5559 L7.8887,9.6329 L12.1507,9.6329 C11.9767,10.6119 11.4147,11.4899 10.5967,12.0469"></path><path fill="#34A853" d="M7.8887,16 C10.0137,16 11.8107,15.289 13.1147,14.067 C13.1147,14.066 13.1157,14.065 13.1167,14.064 L10.5967,12.047 C10.5877,12.053 10.5807,12.061 10.5727,12.067 C9.8607,12.556 8.9507,12.833 7.8887,12.833 C5.8577,12.833 4.1387,11.457 3.4937,9.605 L0.8747,9.605 L0.8747,11.648 C2.2197,14.319 4.9287,16 7.8887,16"></path><g transform="translate(0 4)"><mask id="google-mark-b" fill="#fff"><use xlink:href="#google-mark-a"></use></mask><path fill="#FBBC04" d="M3.4639,5.5337 C3.1369,4.5477 3.1359,3.4727 3.4609,2.4757 L3.4639,2.4777 C3.4679,2.4657 3.4749,2.4547 3.4789,2.4427 L3.4939,0.3287 L0.8939,0.3287 C0.8799,0.3577 0.8599,0.3827 0.8459,0.4117 C-0.2821,2.6667 -0.2821,5.3337 0.8459,7.5887 L0.8459,7.5997 C0.8549,7.6167 0.8659,7.6317 0.8749,7.6487 L3.4939,5.6057 C3.4849,5.5807 3.4729,5.5587 3.4639,5.5337" mask="url(#google-mark-b)"></path></g><mask id="google-mark-d" fill="#fff"><use xlink:href="#google-mark-c"></use></mask><path fill="#EA4335" d="M0.894,4.3291 L3.478,6.4431 C4.113,4.5611 5.843,3.1671 7.889,3.1671 C9.018,3.1451 10.102,3.5781 10.912,4.3671 L13.169,2.0781 C11.733,0.7231 9.85,-0.0219 7.889,0.0001 C4.941,0.0001 2.245,1.6791 0.894,4.3291" mask="url(#google-mark-d)"></path></g></svg><svg class="w-commerce-commercequickcheckoutmicrosofticon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><polygon fill="#F05022" points="7 7 1 7 1 1 7 1"></polygon><polygon fill="#7DB902" points="15 7 9 7 9 1 15 1"></polygon><polygon fill="#00A4EE" points="7 15 1 15 1 9 7 9"></polygon><polygon fill="#FFB700" points="15 15 9 15 9 9 15 9"></polygon></g></svg><div>{{ 'customers_login.DIV_5' | t }}</div></a></div>
+                        <div style="position:relative" data-wf-paypal-button="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;color&quot;:&quot;black&quot;,&quot;shape&quot;:&quot;rect&quot;,&quot;label&quot;:&quot;paypal&quot;,&quot;tagline&quot;:false}" class="paypal">
+                          <div style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;z-index:999;cursor:auto"></div>
+                        </div><a href="/checkout" value="Continue to Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton main-button" data-loading-text="Hang Tight...">{{ 'customers_login.A_6' | t }}</a></div>
+                    </div>
+                  </form>
+                  <div class="w-commerce-commercecartemptystate empty-state dark-cart-empty-state {% if cart.item_count != 0 %}udesly-display-none{% endif %}" udy-el="no-items-in-cart">
+                    <div>{{ 'customers_login.DIV_7' | t }}</div>
+                  </div>
+                  <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate error-message">
+                    <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-cart_order_min-error="Cart failed.">{{ 'customers_login.DIV_8' | t }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <script id="mini-cart-template">
+          window.udeslyMiniCartTemplate = function(item) {
+            return `<li class="cart-item-2" data-item-id="${item.id}">
+                        <div class="mini-cart-row">
+                          <div class="variations-main-wrapper">
+                            <div class="mini-cart-featured-image" style="background-image: url(${item.image})"></div>
+                            <div class="minicart-info">
+                              <div class="text-block-38">${item.title}</div>
+                              <div class="text-block-39">${item.price}</div><a href="${item.remove}" class="link-9" udy-el="remove-item">remove</a></div>
+                          </div>
+                          <div class="cart-quantity-3">${item.quantity}</div>
+                        </div>
+                      </li>`
+          }
+          </script></div>
+          <div class="menu-button w-nav-button"><img src="{{ 'menu-black.svg' | asset_url }}" width="15" alt="" class="menu-icon"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-24 login-and-lost-password">
+      <div class="login-container-main">
+        <div class="login-logo-wrapper loginpage"><img src="{{ 'PPE-Buddy_logos_logo_blue.svg' | asset_url }}" width="190" alt="" class="image-64"><a href="/" class="link-to-hompage w-inline-block"></a></div>
+        <div class="login-form---copy-this w-form">{% form 'customer_login' %}
+          {% unless form.posted_successfully? %}<div udesly-add-class="form-4"></div><input type="email" class="login-email w-input" maxlength="256" name="customer[email]" placeholder="Email Address" id="email-10" required="" value="{% if form.email %}{{ form.email }}{% endif %}"><input type="password" class="login-password w-input" maxlength="256" name="customer[password]" placeholder="Password" id="password-5" required="" value="{% if form.password %}{{ form.password }}{% endif %}"><input type="submit" value="Login" data-wait="Please wait..." class="login-button w-button">{% endunless %}
+          
+          
+        </div><div class="login-form---copy-this w-form">{% if form.errors %}<div class="w-form-fail" style="display: inherit;">
+            <div>{% include 'form-errors' %}</div>
+          </div>{% endif %}{% if form.posted_successfully? %}<div class="w-form-done" style="display: inherit;">
+            <div>{{ 'customers_login.DIV_9' | t }}</div>
+          </div>{% endif %}</div>{% endform %}
+        <div data-w-id="311dbf40-2a16-cc6a-96ed-2d5903cf630e" class="forgot-password-text">{{ 'customers_login.DIV_10' | t }}</div>
+        <div data-w-id="5c03c026-b8ac-5158-83ea-6939af0efae4" class="forgot-password-text-mobile">{{ 'customers_login.DIV_11' | t }}</div><a data-w-id="5107e201-4005-d6ad-011a-fb9d222e3b51" href="/pages/forgot-password" class="link-12">{{ 'customers_login.A_12' | t }}</a>
+        <div class="join-text">{{ 'customers_login.DIV_13' | t }}</div>
+        <div class="paragraph-bigger"><a href="/account/register" class="link-10">{{ 'customers_login.A_14' | t }}</a><br></div>
+        <div class="text-block-146">{{ 'customers_login.DIV_15' | t }}</div>
+      </div><img src="{{ 'Shape-1.png' | asset_url }}" width="917" sizes="(max-width: 479px) 100vw, 50vw" srcset="{{ 'Shape-1-p-500.png' | asset_url }} 500w, {{ 'Shape-1-p-800.png' | asset_url }} 800w, {{ 'Shape-1-p-1080.png' | asset_url }} 1080w, {{ 'Shape-1-p-1600.png' | asset_url }} 1600w, {{ 'Shape-1.png' | asset_url }} 1834w" alt="" class="shape-main"><img src="{{ 'man-1.png' | asset_url }}" width="309.5" sizes="(max-width: 479px) 100vw, 20vw" srcset="{{ 'man-1-p-500.png' | asset_url }} 500w, {{ 'man-1.png' | asset_url }} 619w" alt="" class="man-image-main"><img src="{{ 'Gray-Tree.png' | asset_url }}" width="93" alt="" class="tree-gray"><img src="{{ 'Green-Tree.png' | asset_url }}" width="127.5" alt="" class="tree-green">
+      <div class="login-content-main">
+        <h1 class="login-content-title">{{ 'customers_login.H1_16' | t }}<br>{{ 'customers_login.H1_17' | t }}<br>{{ 'customers_login.H1_18' | t }}</h1>
+        <p class="paragraph-79">{{ 'customers_login.P_19' | t }}<br>{{ 'customers_login.P_20' | t }}</p>
+      </div>
+      <div class="forgot-password-container">
+        <div class="forgot-password-logo-wrapper"><img src="{{ 'PPE-Buddy_logos_logo_blue.svg' | asset_url }}" width="190" alt="" class="image-65"></div>
+        <div class="text-block-147">{{ 'customers_login.DIV_21' | t }}</div>
+        <div class="fp-text">{{ 'customers_login.DIV_22' | t }}<br>{{ 'customers_login.DIV_23' | t }}</div>
+        <div class="recover-form---copy-this w-form">{% form 'recover_customer_password' %}
+          {% unless form.posted_successfully? %}<div udesly-add-class="form-5"></div><input type="email" class="text-field-9 w-input" maxlength="256" name="email" placeholder="Email" id="email-9" required=""><input type="submit" value="Reset" data-wait="Please wait..." class="fp-button w-button">{% endunless %}
+          
+          
+        </div><div class="recover-form---copy-this w-form">{% if form.errors %}<div class="w-form-fail" style="display: inherit;">
+            <div>{% include 'form-errors' %}</div>
+          </div>{% endif %}{% if form.posted_successfully? %}<div class="w-form-done" style="display: inherit;">
+            <div>{{ 'customers_login.DIV_24' | t }}</div>
+          </div>{% endif %}</div>{% endform %}
+        <div data-w-id="275e06cc-a98f-5658-64c8-f34d5342ed5f" class="back-to-login-text">{{ 'customers_login.DIV_25' | t }}</div>
+        <div class="text-block-146">{{ 'customers_login.DIV_26' | t }}</div>
+      </div><img src="{{ 'shape2.png' | asset_url }}" width="917" sizes="100vw" srcset="{{ 'shape2-p-500.png' | asset_url }} 500w, {{ 'shape2-p-800.png' | asset_url }} 800w, {{ 'shape2-p-1080.png' | asset_url }} 1080w, {{ 'shape2-p-1600.png' | asset_url }} 1600w, {{ 'shape2.png' | asset_url }} 1834w" alt="" class="shape2"><img src="{{ 'lady.png' | asset_url }}" width="512" sizes="100vw" srcset="{{ 'lady-p-500.png' | asset_url }} 500w, {{ 'lady-p-800.png' | asset_url }} 800w, {{ 'lady.png' | asset_url }} 1024w" alt="" class="lady-image">
+      <div class="login-graphics-container"></div>
+      <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+        <div class="w-tab-menu">
+          <a data-w-tab="Tab 1" class="tab-link-tab-2 w-inline-block w-tab-link">
+            <div class="text-block-124">{{ 'customers_login.DIV_27' | t }}</div>
+          </a>
+          <a data-w-tab="Tab 2" class="tab-link-tab-2 w-inline-block w-tab-link w--current">
+            <div class="text-block-124">{{ 'customers_login.DIV_28' | t }}</div>
+          </a>
+        </div>
+        <div class="tabs-content w-tab-content">
+          <div data-w-tab="Tab 1" class="tab-pane-tab-1-2 w-tab-pane">
+            <div class="login-form---copy-this w-form">{% form 'customer_login' %}
+              {% unless form.posted_successfully? %}<label for="email-3">{{ 'customers_login.LABEL_29' | t }}</label><input type="email" class="login-email w-input" maxlength="256" name="customer[email]" id="email-3" value="{% if form.email %}{{ form.email }}{% endif %}"><label for="password-2">{{ 'customers_login.LABEL_30' | t }}</label><input type="password" class="login-password w-input" maxlength="256" name="customer[password]" id="password-2" required="" value="{% if form.password %}{{ form.password }}{% endif %}"><input type="submit" value="Login" data-wait="Please wait..." class="login-button w-button">{% endunless %}
+              
+              
+            </div><div class="login-form---copy-this w-form">{% if form.errors %}<div class="w-form-fail" style="display: inherit;">
+                <div>{% include 'form-errors' %}</div>
+              </div>{% endif %}{% if form.posted_successfully? %}<div class="w-form-done" style="display: inherit;">
+                <div>{{ 'customers_login.DIV_31' | t }}</div>
+              </div>{% endif %}</div>{% endform %}
+            <div class="paragraph-bigger cc-bigger-light">{{ 'customers_login.DIV_32' | t }}<a href="/account/register" class="link-10">{{ 'customers_login.A_33' | t }}</a><br></div>
+          </div>
+          <div data-w-tab="Tab 2" class="tab-pane-tab-2 w-tab-pane w--tab-active">
+            <div class="recover-form---copy-this w-form">{% form 'recover_customer_password' %}
+              {% unless form.posted_successfully? %}<label for="email-4">{{ 'customers_login.LABEL_34' | t }}</label><input type="email" class="text-field-9 w-input" maxlength="256" name="email" id="email-4"><input type="submit" value="Submit" data-wait="Please wait..." class="login-button w-button">{% endunless %}
+              
+              
+            </div><div class="recover-form---copy-this w-form">{% if form.errors %}<div class="w-form-fail" style="display: inherit;">
+                <div>{% include 'form-errors' %}</div>
+              </div>{% endif %}{% if form.posted_successfully? %}<div class="w-form-done" style="display: inherit;">
+                <div>{{ 'customers_login.DIV_35' | t }}</div>
+              </div>{% endif %}</div>{% endform %}
+          </div>
+        </div>
+      </div>
+      <div class="fp-content-main">
+        <h1 class="fp-content-title">Forgot your password?</h1>
+        <p class="paragraph-79-copy">Please provide the email address you used when creating your account. We will send you the instructions to reset your password.</p>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-landscape-message">
+    <h1 class="heading-79">{{ 'customers_login.H1_40' | t }}<br>{{ 'customers_login.H1_41' | t }}</h1>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5f1873fee0c93a114d25e26b" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+
+{% include 'notifications' %}{{ 'udesly-shopify.min.js' | asset_url | script_tag }}{{ 'option_selection.js' | shopify_asset_url | script_tag }}
