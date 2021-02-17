@@ -1,69 +1,28 @@
-# This file contains a list of files and folders to be ignored when
-# committing to a git repository.  Ignored files are both Slate project
-# specific files as well as commonly ignored files on any project.
-
-# For more information on this .gitignore files, see GitHub's
-# documentation: https://help.github.com/articles/ignoring-files/
-
-# Project #
-###################
-node_modules
-dist
-upload
-deploy.log
-config.yml
-npm-debug.log
-.env
-.env.*
-config/settings_data.json
-config/settings_schema.json
+# This file contains the information needed for Shopify to authenticate
+# requests and edit/update your remote theme files.
+#
+# 1. Set up a private app (https://help.shopify.com/api/guides/api-credentials#generate-private-app-credentials)
+#    with "Read and write" permissions for "Theme templates and theme assets".
+# 2. Replace the required variables for each environment below.
+#
+# password, theme_id, and store variables are required.
+#
+# For more information on this config file:
+#   Configuration variables | http://shopify.github.io/themekit/configuration/
+#   Ignore patterns | http://shopify.github.io/themekit/ignores/
 
 
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
+development:
+ password: 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
+ theme_id: "113471979672"
+ store: https://ppebuddytest.myshopify.com
+ ignore_files:
+    - settings_data.json # Uncomment this line to avoid resetting theme settings
 
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
 
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
-
-# OS generated files #
-######################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Custom #
-######################
-*.sass-cache*
-.cache/*
-_site
-/.idea
-/.vscode
-secrets.json
-.jekyll-metadata
-.ruby-version
+production:
+  password: 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
+  theme_id: "113471979672"
+  store: https://ppebuddytest.myshopify.com
+  ignore_files:
+    - settings_data.json # Uncomment this line to avoid resetting theme settings
