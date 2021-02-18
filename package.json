@@ -1,0 +1,22 @@
+{
+  "name": "ppebuddy",
+  "version": "1.0.0",
+  "description": "Shopify template for my store",
+  "main": "index.js",
+  "scripts": {
+    "watch": "theme watch",
+    "deploy-production": "theme deploy --env=production",
+    "deploy-development": "theme deploy --env=development",
+    "deploy-live": "theme deploy --env=live --allow-live"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedigitalartistry/ppebuddy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedigitalartistry/ppebuddy/issues"
+  },
+  "homepage": "https://github.com/thedigitalartistry/ppebuddy#readme"
+}
